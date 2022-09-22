@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício - Aula 4</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <div>
+        <input type="text" id="numberOne"></input>
+    </div>
+    <div>
+        <input type="text" id="numberTwo"></input>
+    </div>
+    <div>
+        <input type="button" id="botaoSoma" onclick="calcSoma()" value="+"></input>
+        <input type="button" id="botaoSub" onclick="calcSub()" value="-"></input>
+        <input type="button" id="botaoMulti" onclick="calcMulti()" value="x"></input>
+        <input type="button" id="botaoDiv" onclick="calcDiv()" value="/"></input>
+    </div> 
+    <script>
+        function calcSoma()
+        {
+            var numberOne = parseFloat(document.getElementById("numberOne").value);
+            var numberTwo = parseFloat(document.getElementById("numberTwo").value);
+            var result = numberOne + numberTwo;
+
+            console.log(numberOne + " + " + numberTwo + " = " + result);
+            alert(numberOne + " + " + numberTwo + " = " + result);
+        }
+
+        function calcSub()
+        {
+            var numberOne = parseFloat(document.getElementById("numberOne").value);
+            var numberTwo = parseFloat(document.getElementById("numberTwo").value);
+            var result = numberOne - numberTwo;
+
+            console.log(numberOne + " - " + numberTwo + " = " + result);
+            alert(numberOne + " - " + numberTwo + " = " + result);
+        }
+
+        function calcMulti()
+        {
+            var numberOne = parseFloat(document.getElementById("numberOne").value);
+            var numberTwo = parseFloat(document.getElementById("numberTwo").value);
+            var result = numberOne * numberTwo;
+
+            console.log(numberOne + " x " + numberTwo + " = " + result);
+            alert(numberOne + " x " + numberTwo + " = " + result);
+        }
+
+        function calcDiv()
+        {
+            var numberOne = parseFloat(document.getElementById("numberOne").value);
+            var numberTwo = parseFloat(document.getElementById("numberTwo").value);
+            var result = numberOne / numberTwo;
+
+            console.log(numberOne + " / " + numberTwo + " = " + result);
+            alert(numberOne + " / " + numberTwo + " = " + result);
+        }
+
+    </script>
+</body>
+</html>

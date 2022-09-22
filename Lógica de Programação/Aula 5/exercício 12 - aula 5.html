@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 12 - Aula 5</title>
+</head>
+<body>
+    <h1>Promoção de Produto</h1>
+    <div>
+        <input type="text" id="price"></input>
+    </div>
+    <div>
+        <input type="button" id="buttonOne" onclick="discount()" value="Valor Promocional"></input>
+    </div> 
+    <script>
+        function discount()
+        {
+            var productPrice = (parseFloat(document.getElementById("price").value)).toFixed(2);
+            var discountProductPrice = (productPrice - (0.05 * productPrice)).toFixed(2);
+
+            alert("O preço promocional do produto é de R$ " + discountProductPrice + ".");
+        }
+    </script>
+</body>
+</html>

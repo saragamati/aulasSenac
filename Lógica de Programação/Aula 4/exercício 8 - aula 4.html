@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 8 - Aula 4</title>
+</head>
+<body>
+    <h1>Distâncias</h1>
+    <div>
+        <input type="text" id="numberMetro"></input>
+    </div>
+    <div>
+        <input type="button" id="botao1" onclick="transform()" value="Transformar valor"></input>
+    </div> 
+    <script>
+        function transform()
+        {
+            var numMetro = parseFloat(document.getElementById("numberMetro").value);
+
+            var numKm = numMetro / 1000;
+            var numHm = numMetro / 100;
+            var numDam = numMetro / 10;
+            var numdm = numMetro * 10;
+            var numcm = numMetro * 100;
+            var nummm = numMetro * 1000;
+
+            alert("A distância de " + numMetro + "m corresponde a:\n" + numKm + " Km\n" + numHm + " Hm\n" + numDam + " Dam\n" + numdm + " dm\n" + numcm + " cm\n" + nummm + " mm\n" );
+        }
+    </script>
+</body>
+</html>

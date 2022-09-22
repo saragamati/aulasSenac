@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 26 - Aula 8</title>
+</head>
+<body>
+    <h1>Maior número</h1>
+    <div>
+        <label>A</label><input type="text" id="numA"></input>
+    </div>
+    <div>
+        <label>B</label><input type="text" id="numB"></input>
+    </div>
+    <div>
+        <input type="button" id="buttonOne" onclick="higher()" value="Qual é maior?"></input>
+    </div> 
+    <script>
+        function higher(){
+
+            var numA = parseFloat(document.getElementById("numA").value);
+            var numB = parseFloat(document.getElementById("numB").value);
+
+            var retMsg = "";
+
+            if(numA == numB){
+
+                retMsg = "Não existe valor maior, os 2 são iguais."
+
+            }else if(numA > numB){
+
+                retMsg = "O número A é maior."
+
+            }else{
+
+                retMsg = "O número B é maior."
+
+            }
+
+            alert(retMsg);
+
+        }
+    </script>
+</body>
+</html>

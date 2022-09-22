@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 14 - Exercício 54</title>
+</head>
+<body>
+    <script>
+        window.onload = function(e){
+            var retMsg = "";
+            var heavierThan90 = 0;
+            var lesserThan50and160 = 0;
+            var moreThan100and190 = 0;
+            var heightTotal = 0;
+
+            for(count = 1;count<=7;count++){
+                var personWeight = parseInt(window.prompt(`Digite seu peso`));
+                var personHeight = parseFloat(window.prompt(`Digite sua altura`));
+                heightTotal = heightTotal + personHeight;
+
+                if(personWeight>90){
+                    heavierThan90++;
+                    if(personWeight>100 && personHeight>1.90){
+                        moreThan100and190++;
+                    }
+                }else if(personWeight<50 && personHeight<1.60){
+                    lesserThan50and160++;
+                }
+
+            }
+        
+            heightMed = parseFloat(heightTotal/7).toFixed(2);
+            retMsg = `a) Média de altura do grupo = ${heightMed}\nb) Pessoas com mais de 90kg = ${heavierThan90}\n`;
+            retMsg = `${retMsg}c) Pessoas com menos de 50kg e menos de 1.60m = ${lesserThan50and160}\n`;
+            retMsg = `${retMsg}d) Pessoas com mais de 1.90m e mais de 100kg = ${moreThan100and190}`
+
+            alert(retMsg)
+        }
+    </script>
+</body>
+</html>

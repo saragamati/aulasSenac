@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 5 - Aula 3</title>
+</head>
+<body>
+    <h1>Sucessor e antecessor</h1>
+    <div>
+        <input type="text" id="numero1" name="numero1"></input>
+    </div>
+    <div>
+        <input type="button" id="botao1" name="botao1" onclick="alerta1()" value="Gerar antecessor e sucessor"></input>
+    </div> 
+    <script>
+        function alerta1()
+        {
+            var n1 = parseInt(document.getElementById("numero1").value);
+            var n2 = n1 - 1;
+            var n3 = n1 + 1;
+
+            console.log("O antecessor de " + n1 + " é " + n2 + ".\nO sucessor de " + n1 + " é " + n3 + ".");
+            alert("O antecessor de " + n1 + " é " + n2 + ".\nO sucessor de " + n1 + " é " + n3 + ".");
+        }
+    </script>
+</body>
+</html>

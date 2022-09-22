@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 10 - Aula 4</title>
+</head>
+<body>
+    <h1>Parede</h1>
+    <div>
+        <input type="text" id="numberLarg"></input>
+    </div>
+    <div>
+        <input type="text" id="numberAlt"></input>
+    </div>
+    <div>
+        <input type="button" id="botao1" onclick="tinta()" value="Calcular tinta necessária"></input>
+    </div> 
+    <script>
+        function tinta()
+        {
+            var Larg = parseFloat(document.getElementById("numberLarg").value);
+            var Alt = parseFloat(document.getElementById("numberAlt").value);
+            var AreaParede = (Larg * Alt).toFixed(2);
+            var LitrosTinta = (AreaParede / 2).toFixed(2);
+
+            alert("Em uma parede de " + AreaParede + " m², são necessários " + LitrosTinta + " l de tinta para pintá-la.");
+        }
+    </script>
+</body>
+</html>

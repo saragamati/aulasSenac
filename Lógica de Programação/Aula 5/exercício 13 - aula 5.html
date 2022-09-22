@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 13 - Aula 5</title>
+</head>
+<body>
+    <h1>Aumento de Salário</h1>
+    <div>
+        <input type="text" id="salary"></input>
+    </div>
+    <div>
+        <input type="button" id="buttonOne" onclick="raise()" value="Calcular reajuste salarial"></input>
+    </div> 
+    <script>
+        function raise()
+        {
+            var actualSalary = (parseFloat(document.getElementById("salary").value)).toFixed(2);
+            var raisedSalary = (1.15 * actualSalary).toFixed(2);
+
+            alert("O seu novo salário é de R$ " + raisedSalary + ".");
+        }
+    </script>
+</body>
+</html>

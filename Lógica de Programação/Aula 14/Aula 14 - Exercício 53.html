@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 14 - Exercício 53</title>
+</head>
+<body>
+    <script>
+        window.onload = function(e){
+            var retMsg = "";
+            var maleCount = 0;
+            var femaleCount = 0;
+            var ageSum = 0;
+            var maleAgeSum = 0;
+            var womenHigherThanTwenty = 0;
+
+            for(count = 1;count<=5;count++){
+                var askedInfo = window.prompt(`Digite sua idade e seu sexo`);
+                var info = askedInfo.split(' ');
+                var personAge = parseInt(info[0]);
+                var personGender = info[1];
+
+                ageSum = ageSum + personAge;
+
+                if(personGender == "m"){
+                    maleCount++;
+                    maleAgeSum = maleAgeSum + personAge;
+
+                }else if(personGender == "f"){
+                    femaleCount++;
+                    if(personAge>20){
+                        womenHigherThanTwenty++;
+                    }
+                }
+                
+        }
+            var ageMed = parseFloat(ageSum/5).toFixed(1);
+            var maleAgeMed = parseFloat(maleAgeSum/maleCount).toFixed(1);
+
+            retMsg = `a) Foram cadastrados ${maleCount} homens.\nb) Foram cadastradas ${femaleCount} mulheres.\nc) A média de idade do grupo é de ${ageMed}.\nd) A média de idade dos homens é de ${maleAgeMed}.\ne) ${womenHigherThanTwenty} mulheres tem mais de 20 anos.`
+            alert(retMsg);
+    }
+        
+    </script>
+</body>
+</html>

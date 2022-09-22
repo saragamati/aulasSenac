@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 25 - Aula 8</title>
+</head>
+<body>
+    <h1>Triângulos</h1>
+    <div>
+        <label>a</label><input type="text" id="sideA"></input>
+    </div>
+    <div>
+        <label>b</label><input type="text" id="sideB"></input>
+    </div>
+    <div>
+        <label>c</label><input type="text" id="sideC"></input>
+    </div>
+    <div>
+        <input type="button" id="buttonOne" onclick="triangle()" value="Forma um triângulo?"></input>
+    </div> 
+    <script>
+        function triangle(){
+
+            var sideA = parseFloat(document.getElementById("sideA").value);
+            var sideB = parseFloat(document.getElementById("sideB").value);
+            var sideC = parseFloat(document.getElementById("sideC").value);
+
+            var retMsg = "";
+
+
+            
+            if(sideA >= sideB && sideA >= sideC){
+
+                if(sideB + sideC >= sideA){
+                    retMsg = "Estas retas formam um triângulo."
+                }else{
+                    retMsg = "Estas retas não formam um triângulo."
+                }
+            }
+
+            else if(sideB >= sideA && sideB >= sideC){
+
+                if(sideA + sideC >= sideB){
+                retMsg = "Estas retas formam um triângulo."
+                }else{
+                retMsg = "Estas retas não formam um triângulo."
+                }
+            }
+
+            else if(sideC >= sideA && sideC >= sideB){
+
+                if(sideA + sideB >= sideC){
+                retMsg = "Estas retas formam um triângulo."
+                }else{
+                retMsg = "Estas retas não formam um triângulo."
+                }
+            }
+
+            alert(retMsg);
+
+        }
+    </script>
+</body>
+</html>

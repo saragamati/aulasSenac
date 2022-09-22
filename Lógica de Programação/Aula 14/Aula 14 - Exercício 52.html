@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 14 - Exercício 52</title>
+</head>
+<body>
+    <script>
+        window.onload = function(e){
+            var retMsg = "";
+            var higherThanEighteen = 0;
+            var lowerThanFive = 0;
+            var highestAge = 0;
+            var ageSum = 0;
+
+            for(count = 1;count<=10;count++){
+                var personAge = Number(window.prompt(`Idade do indivíduo ${count}`));
+                ageSum = ageSum + personAge;
+
+                if(personAge >= 18){
+                    higherThanEighteen++;
+                }else if(personAge<5){
+                    lowerThanFive++;
+                }
+
+                if(personAge>highestAge){
+                    highestAge = personAge;
+                }
+                
+            }
+            var ageMed = parseFloat(ageSum/10).toFixed(1)
+            retMsg = `A média de idade do grupo é de ${ageMed}.
+${higherThanEighteen} pessoas tem mais de 18 anos.
+${lowerThanFive} tem menos de 5 anos.
+O indivíduo mais velho tem ${highestAge} anos.`
+            alert(retMsg);
+        }
+        
+    </script>
+</body>
+</html>

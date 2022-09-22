@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 13 - Exercício 50</title>
+</head>
+<body>
+    <script>
+        window.onload = function(e){
+            var retMsg = "Os números sorteados foram:\n";
+            var biggerThanFive = 0;
+            var divByThree = 0;
+
+            for(count = 1;count<=20;count++){
+                var rng = Math.ceil(Math.random()*10);
+                retMsg = `${retMsg}${rng} `
+                if(rng>5){
+                    biggerThanFive++;
+                }
+                if(rng%3 == 0){
+                    divByThree++;
+                }
+            }
+            retMsg = `${retMsg}\n${biggerThanFive} são maiores que 5\n${divByThree} são divisíveis por 3`
+            alert(retMsg);
+
+        }
+        
+    </script>
+</body>
+</html>

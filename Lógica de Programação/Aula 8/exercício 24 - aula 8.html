@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 24 - Aula 8</title>
+</head>
+<body>
+    <h1>Preço da Passagem</h1>
+    <div>
+        <label>Distância da Viagem</label><input type="text" id="distance"></input>
+    </div>
+    <div>
+        <input type="button" id="buttonOne" onclick="preco()" value="Preço da Passagem"></input>
+    </div> 
+    <script>
+        function preco(){
+
+            var distance = parseFloat(document.getElementById("distance").value);      
+
+            var retMsg = "";
+
+            if(distance <= 200){
+
+                var price = parseFloat(distance * 0.5).toFixed(2);
+
+                retMsg = "O preço da viagem é de R$ " + price;
+
+            }else{
+
+                var price = parseFloat(distance * 0.45).toFixed(2);
+
+                retMsg = "O preço da viagem é de R$ " + price;
+            }
+
+            alert(retMsg);
+
+        }
+    </script>
+</body>
+</html>

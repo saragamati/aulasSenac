@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 17 - Aula 6</title>
+</head>
+<body>
+    <h1>Multa</h1>
+    <div>
+        <label>Velocidade do Carro</label><input type="text" id="Velocidade"></input>
+    </div>
+    <div>
+        <input type="button" id="buttonOne" onclick="velocidade()" value="Exibir Multa"></input>
+    </div> 
+    <script>
+        function velocidade()
+        {
+            var speed = parseFloat(document.getElementById("Velocidade").value);
+            var msgRetorno = "";
+
+            if(speed > 80){
+                msgRetorno = "Você foi multado";
+
+                var speedDif = speed - 80;
+                var multa = (speedDif * 5).toFixed(2);
+
+                msgRetorno = msgRetorno + " e o valor da multa é R$ " + multa;
+
+            }else{
+
+                msgRetorno = "A velocidade está dentro do permitido";
+
+            }
+
+            alert(msgRetorno);
+        }
+    </script>
+</body>
+</html>

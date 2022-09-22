@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 27 - Aula 8</title>
+</head>
+<body>
+    <h1>Terrenos</h1>
+    <div>
+        <label>Largura</label><input type="text" id="larg"></input>
+    </div>
+    <div>
+        <label>Comprimento</label><input type="text" id="comp"></input>
+    </div>
+    <div>
+        <input type="button" id="buttonOne" onclick="terreno()" value="Situação do terreno"></input>
+    </div> 
+    <script>
+        function terreno(){
+
+            var larg = parseFloat(document.getElementById("larg").value);
+            var comp = parseFloat(document.getElementById("comp").value);
+            var area = parseFloat(larg*comp).toFixed(2);
+
+            var retMsg = "";
+
+            if(area < 100){
+
+                retMsg = "TERRENO POPULAR"
+
+            }else if(area > 500){
+
+                retMsg = "TERRENO VIP"
+
+            }else{
+
+                retMsg = "TERRENO MASTER"
+
+            }
+
+            alert(retMsg);
+
+        }
+    </script>
+</body>
+</html>

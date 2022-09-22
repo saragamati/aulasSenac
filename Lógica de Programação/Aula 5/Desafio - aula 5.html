@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Desafio - Aula 5</title>
+</head>
+<body>
+    <h1>Redução do tempo de vida</h1>
+    <div>
+        <label>Cigarros Diários</label><input type="text" id="dailyCigarettes"></input>
+    </div>
+    <div>
+        <label>Anos Fumando</label><input type="text" id="yearsSmoked"></input>
+    </div>
+    <div>
+        <input type="button" id="buttonOne" onclick="lifespanLoss()" value="Redução do tempo de vida"></input>
+    </div> 
+    <script>
+        function lifespanLoss()
+        {
+            var dailyCigarettes= parseInt(document.getElementById("dailyCigarettes").value);
+            var yearsSmoked = parseInt(document.getElementById("yearsSmoked").value);
+            var cigaretteCount = (dailyCigarettes * 365 * yearsSmoked);
+            var minLoss = cigaretteCount * 10;
+            var dayLoss = parseInt(minLoss / (24*60));
+
+            alert("Você já perdeu " + dayLoss + " dias de vida porque fumou " + cigaretteCount + " cigarros.");
+        }
+    </script>
+</body>
+</html>

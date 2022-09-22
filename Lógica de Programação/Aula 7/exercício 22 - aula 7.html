@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 22 - Aula 7</title>
+</head>
+<body>
+    <h1>Ano Bissexto</h1>
+    <div>
+        <label>Ano de Nascimento</label><input type="text" id="year"></input>
+    </div>
+    <div>
+        <input type="button" id="buttonOne" onclick="quartel()" value="Situação do Alistamento"></input>
+    </div> 
+    <script>
+        function quartel()
+        {
+            var year = parseInt(document.getElementById("year").value);
+            var age = (2022 - year);
+
+            var retMsg = "";
+
+            if(age == 18){
+
+                retMsg = "É ano de alistamento.";
+
+            }else if(age > 18){
+
+                var timePast = age-18;
+                retMsg = "Já se passaram " + timePast + " anos desde o seu alistamento."
+
+            }
+            else{
+
+                var timeLeft = 18-age;
+                retMsg = "Faltam " + timeLeft + " anos para seu alistamento.";
+
+            }
+
+            alert(retMsg);
+        }
+    </script>
+</body>
+</html>

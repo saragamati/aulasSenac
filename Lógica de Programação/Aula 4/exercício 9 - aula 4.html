@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 9 - Aula 4</title>
+</head>
+<body>
+    <h1>Dinheiro</h1>
+    <div>
+        <input type="text" id="numberReal"></input>
+    </div>
+    <div>
+        <input type="button" id="botao1" onclick="transform()" value="Valor em dólar"></input>
+    </div> 
+    <script>
+        function transform()
+        {
+            var numReal = parseFloat(document.getElementById("numberReal").value).toFixed(2);
+
+            var numUs = (numReal / 3.45).toFixed(2);
+
+            alert("Com R$ " + numReal + " você pode comprar U$ " + numUs + ".");
+        }
+    </script>
+</body>
+</html>

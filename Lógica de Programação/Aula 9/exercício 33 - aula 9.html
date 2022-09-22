@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 32 - Aula 9</title>
+</head>
+<body>
+    <h1>Calculadora de IMC</h1>
+    <div>
+        <label>Altura em cm</label><input type="text" id="userHeight"></input>
+    </div>
+    <div>
+        <label>Peso</label><input type="text" id="userWeight"></input>
+    </div>
+    <div>
+        <input type="button" id="buttonOne" onclick="imc()" value="Calcular IMC"></input>
+    </div> 
+    <script>
+        function imc(){
+
+            var userHeight = parseFloat(document.getElementById("userHeight").value);
+            var userWeight = parseFloat(document.getElementById("userWeight").value);
+            var imc = parseFloat(userWeight/((userHeight/100)*(userHeight/100))).toFixed(1);
+
+            var retMsg = "Seu IMC é de " + imc + ", portanto você está ";
+
+            if(imc <= 18.5){
+                retMsg = retMsg + "abaixo do peso."
+            }else if(imc>18.5 && imc<=25){
+                retMsg = retMsg + "com o peso ideal."
+            }else if(imc>25 && imc<=30){
+                retMsg = retMsg + "com sobrepeso."
+            }else if(imc>30 && imc<=40){
+                retMsg = retMsg + "obeso."
+            }else{
+                retMsg = retMsg + "com obesidade mórbida."
+            }
+
+
+
+            alert(retMsg);
+
+        }
+    </script>
+</body>
+</html>

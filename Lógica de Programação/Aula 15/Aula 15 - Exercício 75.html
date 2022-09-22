@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 15 - Exercício 75</title>
+</head>
+<body>
+    <script>
+        window.onload = function(e){
+            var sequence = [15];
+            var fibonacci = 1;
+
+            for(var pos=0;pos<=15;pos++){
+                if(pos<=1){
+                    sequence[pos] = fibonacci;
+                }else{
+                    sequence[pos] = sequence[pos-2] + sequence[pos-1];
+                }
+            }
+            for(var pos=0;pos<=15;pos++){
+                console.log(sequence[pos]);
+            }
+
+        }
+    </script>
+</body>
+</html>

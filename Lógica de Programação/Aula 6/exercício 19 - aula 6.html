@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 19 - Aula 6</title>
+</head>
+<body>
+    <h1>Média de aluno</h1>
+    <div>
+        <label>Prova 1</label><input type="text" id="testOne"></input>
+    </div>
+    <div>
+        <label>Prova 2</label><input type="text" id="testTwo"></input>
+    </div>
+    <div>
+        <label>Prova 3</label><input type="text" id="testThree"></input>
+    </div>
+    <div>
+        <input type="button" id="buttonOne" onclick="media()" value="Média do Aluno"></input>
+    </div> 
+    <script>
+        function media()
+        {
+            var testOne = parseFloat(document.getElementById("testOne").value);
+            var testTwo = parseFloat(document.getElementById("testTwo").value);
+            var testThree = parseFloat(document.getElementById("testThree").value);
+            var media = ((testOne + testTwo + testThree)/3).toFixed(1);
+
+            var retMsg = "";
+
+            if(media >= 7.0){
+
+                retMsg = "A média final do aluno foi de " + media + ", portanto seu aproveitamento foi bom.";
+
+            }else{
+
+                retMsg = "A média final do aluno foi de " + media + ", portanto seu aproveitamento foi ruim.";
+
+            }
+
+            alert(retMsg);
+        }
+    </script>
+</body>
+</html>

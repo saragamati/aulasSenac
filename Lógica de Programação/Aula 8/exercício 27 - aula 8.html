@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 27 - Aula 8</title>
+</head>
+<body>
+    <h1>Média do aluno</h1>
+    <div>
+        <label>Nota 1</label><input type="text" id="testOne"></input>
+    </div>
+    <div>
+        <label>Nota 2</label><input type="text" id="testTwo"></input>
+    </div>
+    <div>
+        <input type="button" id="buttonOne" onclick="situation()" value="Situação do aluno"></input>
+    </div> 
+    <script>
+        function situation(){
+
+            var notaOne = parseFloat(document.getElementById("testOne").value);
+            var notaTwo = parseFloat(document.getElementById("testTwo").value);
+            var med = parseFloat((notaOne+notaTwo)/2).toFixed(2);
+
+            var retMsg = "";
+
+            if(med < 5.0){
+
+                retMsg = "REPROVADO"
+
+            }else if(med >= 7.0){
+
+                retMsg = "APROVADO"
+
+            }else{
+
+                retMsg = "RECUPERAÇÃO"
+
+            }
+
+            alert(retMsg);
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 21 - Aula 7</title>
+</head>
+<body>
+    <h1>Ano Bissexto</h1>
+    <div>
+        <label>Ano</label><input type="text" id="year"></input>
+    </div>
+    <div>
+        <input type="button" id="buttonOne" onclick="bissexto()" value="Bissexto?"></input>
+    </div> 
+    <script>
+        function bissexto()
+        {
+            var year = parseInt(document.getElementById("year").value);
+            var div = (year / 4);
+            var calc = (parseInt(div) - div);
+
+            var retMsg = "";
+
+            if(calc == 0){
+
+                retMsg = "Bissexto";
+
+            }else{
+
+                retMsg = "Ano normal";
+
+            }
+
+            alert(retMsg);
+        }
+    </script>
+</body>
+</html>

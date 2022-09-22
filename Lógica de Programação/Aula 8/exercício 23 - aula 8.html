@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 23 - Aula 7</title>
+</head>
+<body>
+    <h1>Promoção do Dia da Mulher</h1>
+    <div>
+        <label>Nome</label><input type="text" id="name"></input>
+    </div>
+    <div>
+        <label>Sexo</label><input type="text" id="gender"></input>
+    </div>
+    <div>
+        <label>Valor das Compras</label><input type="text" id="saleValue"></input>
+    </div>
+    <div>
+        <input type="button" id="buttonOne" onclick="preco()" value="Preço"></input>
+    </div> 
+    <script>
+        function preco(){
+
+            var nome = String(document.getElementById("name").value);
+            var gender = String(document.getElementById("gender").value);
+            var saleValue = parseFloat(document.getElementById("saleValue").value).toFixed(2);
+            
+            var retMsg = "";
+
+            if(gender == "f"){
+
+                var finalValue = parseFloat(saleValue - (saleValue * 0.13)).toFixed(2);
+
+                retMsg = "O preço final a se pagar é de R$ " + finalValue;
+
+            }else if(gender = "m"){
+
+                var finalValue = parseFloat(saleValue - (saleValue * 0.05)).toFixed(2);
+
+                retMsg = "O preço final a se pagar é de R$ " + finalValue;
+            }
+
+            alert(retMsg);
+
+        }
+    </script>
+</body>
+</html>

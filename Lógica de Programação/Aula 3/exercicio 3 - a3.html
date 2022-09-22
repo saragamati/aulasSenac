@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 3 - Aula 3</title>
+</head>
+<body>
+    <h1>Somatório entre 2 variáveis</h1>
+    <div>
+        <input type="text" id="numero1" name="numero1"></input>
+    </div>
+    <div>
+        <input type="text" id="numero2" name="numero2"></input>
+    </div>
+    <div>
+        <input type="button" id="botao" name="botao" onclick="alerta1()" value="Exibir Alerta"></input>
+    </div> 
+    <script>
+        function alerta1()
+        {
+            var num1 = document.getElementById("numero1").value;
+            var num2 = document.getElementById("numero2").value;
+            var res = parseFloat(num1) + parseFloat(num2);
+
+            console.log("A soma entre " + num1 + " e " + num2 + " é " + res + ".");
+            alert("A soma entre " + num1 + " e " + num2 + " é " + res + ".");
+
+
+
+        }
+    </script>
+</body>
+</html>

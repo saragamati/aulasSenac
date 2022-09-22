@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Jogo da Velha - Aula 10</title>
+</head>
+<body>
+    <h1>Jogo da Velha</h1>
+    <div>
+        <input type="button" id="NE" onclick="marcar(this)" value=" " class="gameButton"></input>
+        <input type="button" id="N" onclick="marcar(this)" value=" " class="gameButton"></input>
+        <input type="button" id="ND" onclick="marcar(this)" value=" " class="gameButton"></input>
+    </div>
+    <div>
+        <input type="button" id="E" onclick="marcar(this)" value=" " class="gameButton"></input>
+        <input type="button" id="C" onclick="marcar(this)" value=" " class="gameButton"></input>
+        <input type="button" id="D" onclick="marcar(this)" value=" " class="gameButton"></input>
+    </div>
+    <div>
+        <input type="button" id="SE" onclick="marcar(this)" value=" " class="gameButton"></input>
+        <input type="button" id="S" onclick="marcar(this)" value=" " class="gameButton"></input>
+        <input type="button" id="SD" onclick="marcar(this)" value=" " class="gameButton"></input>
+    </div>
+    <script>
+
+        window.play = "";
+
+        function marcar(z){
+
+            var retMsg = "";
+
+            
+            if(z.value == " "){
+                if(play == "X"){
+                play ="O";
+                z.value = play;
+
+                }else if(play == "O"){
+                play ="X";
+                z.value = play;
+
+                }else if(play == play){
+                play ="X";
+                z.value = play;
+
+                }
+            }
+
+            var butNE = document.getElementById("NE").value;
+            var butN = document.getElementById("N").value;
+            var butND = document.getElementById("ND").value;
+            var butE = document.getElementById("E").value;
+            var butC = document.getElementById("C").value;
+            var butD = document.getElementById("D").value;
+            var butSE = document.getElementById("SE").value;
+            var butS = document.getElementById("S").value;
+            var butSD = document.getElementById("SD").value;
+
+            
+            if(butNE == "X" && butN == "X" && butND == "X"){
+                retMsg = "X VENCEU";
+                alert(retMsg);
+            }else if(butNE == "O" && butN == "O" && butND == "O"){
+                retMsg = "O VENCEU";
+                alert(retMsg);
+
+            }else if(butE == "X" && butC == "X" && butD == "X"){
+                retMsg = "X VENCEU";
+                alert(retMsg);
+            }else if(butE == "O" && butC == "O" && butD == "O"){
+                retMsg = "O VENCEU";
+                alert(retMsg);
+
+            }else if(butSE == "X" && butS == "X" && butSD == "X"){
+                retMsg = "X VENCEU";
+                alert(retMsg);
+            }else if(butSE == "O" && butS == "O" && butSD == "O"){
+                retMsg = "O VENCEU";
+                alert(retMsg);
+            
+            }else if(butNE == "X" && butE == "X" && butSE == "X"){
+                retMsg = "X VENCEU";
+                alert(retMsg);
+            }else if(butNE == "O" && butE == "O" && butSE == "O"){
+                retMsg = "O VENCEU";
+                alert(retMsg);
+            
+            }else if(butN == "X" && butC == "X" && butS == "X"){
+                retMsg = "X VENCEU";
+                alert(retMsg);
+            }else if(butN == "O" && butC == "O" && butS == "O"){
+                retMsg = "O VENCEU";
+                alert(retMsg);
+
+            }else if(butND == "X" && butD == "X" && butSD == "X"){
+                retMsg = "X VENCEU";
+                alert(retMsg);
+            }else if(butND == "O" && butD == "O" && butSD == "O"){
+                retMsg = "O VENCEU";
+                alert(retMsg);
+
+            }else if(butNE == "X" && butC == "X" && butSD == "X"){
+                retMsg = "O VENCEU";
+                alert(retMsg);
+            }else if(butNE == "O" && butC == "O" && butSD == "O"){
+                retMsg = "O VENCEU";
+                alert(retMsg);
+
+            }else if(butND == "X" && butC == "X" && butSE == "X"){
+                retMsg = "X VENCEU";
+                alert(retMsg);
+            }else if(butND == "O" && butC == "O" && butSE == "O"){
+                retMsg = "O VENCEU";
+                alert(retMsg);
+            }
+            
+            
+        }
+    </script>
+</body>
+</html>

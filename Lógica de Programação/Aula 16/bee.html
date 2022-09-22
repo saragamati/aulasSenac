@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESAFIO Sort de Arrays</title>
+</head>
+<body>
+    <script>
+        window.onload = function(e){
+            var rng = [14];
+            var arrayNaEstica = false;
+
+            for(var pos=0;pos<=14;pos++){
+                rng[pos] = Math.floor(Math.random()*101);
+                console.log(rng[pos]);
+            }
+            while(arrayNaEstica == false){
+                arrayNaEstica = true;
+                for(var pos=0;pos<15;pos++){
+
+                    if(rng[pos]>rng[pos+1]){
+                        var remember = rng[pos];
+
+                        rng[pos] = rng[pos+1];
+                        rng[pos+1] = remember;
+                        var arrayNaEstica = false;
+                    }
+                }
+            }
+            for(var pos=0;pos<15;pos++){
+                console.log(rng[pos]);
+            }
+        }
+    </script>
+</body>
+</html>

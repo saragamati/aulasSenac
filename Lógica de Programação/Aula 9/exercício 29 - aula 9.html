@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 29 - Aula 9</title>
+</head>
+<body>
+    <h1></h1>
+    <div>
+        <label>Nome do Funcionário</label><input type="text" id="employeeName"></input>
+    </div>
+    <div>
+        <label>Salário Atual</label><input type="text" id="currentSalary"></input>
+    </div>
+    <div>
+        <label>Anos de Serviço</label><input type="text" id="yearsWorked"></input>
+    </div>
+    <div>
+        <input type="button" id="buttonOne" onclick="newsalary()" value="Reajustar Salário"></input>
+    </div> 
+    <script>
+        function newsalary(){
+
+            var employeeName = String(document.getElementById("employeeName").value);
+            var currentSalary = parseFloat(document.getElementById("currentSalary").value).toFixed(2);
+            var yearsWorked = parseInt(document.getElementById("yearsWorked").value);
+
+            var retMsg = "";
+
+            if(yearsWorked <= 3){
+                
+                var newSalary = parseFloat(currentSalary*1.03).toFixed(2);
+                retMsg = "Novo salário = R$ " + newSalary;
+
+            }else if(yearsWorked >= 10){
+
+                var newSalary = parseFloat(currentSalary*1.2).toFixed(2);
+                retMsg = "Novo salário = R$ " + newSalary;
+
+            }else{
+
+                var newSalary = parseFloat(currentSalary*1.125).toFixed(2);
+                retMsg = "Novo salário = R$ " + newSalary;
+
+            }
+
+            alert(retMsg);
+
+        }
+    </script>
+</body>
+</html>

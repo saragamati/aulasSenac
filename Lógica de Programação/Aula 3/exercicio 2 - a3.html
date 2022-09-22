@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 2 - Aula 3</title>
+</head>
+<body>
+    <h1>Salário do funcionário</h1>
+    <div>
+        <input type="text" id="nome" name="nome"></input>
+    </div>
+    <div>
+        <input type="text" id="salario" name="salario"></input>
+    </div>
+    <div>
+        <input type="button" id="botao" name="botao" onclick="alerta1()" value="Exibir Alerta"></input>
+    </div> 
+    <script>
+        function alerta1()
+        {
+            var nome1 = document.getElementById("nome").value;
+            var salario1 = document.getElementById("salario").value;
+
+            console.log("A funcionária " + nome1 + " tem um salário de R$" + salario1 + " em Junho.");
+            alert("A funcionária " + nome1 + " tem um salário de R$" + salario1 + " em Junho.");
+
+
+
+        }
+    </script>
+</body>
+</html>

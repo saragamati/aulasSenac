@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 13 - Exercício 49</title>
+</head>
+<body>
+    <script>
+        window.onload = function(e){
+            var parValue = 0;
+            var imparValue = 0;
+
+            for(count = 1;count<=6;count++){
+                var userPromptValue = parseInt(window.prompt("Digite um valor inteiro"));
+                if(userPromptValue%2 == 0){
+                    parValue++;
+                }else{
+                    imparValue++;
+                }
+            }
+            
+            alert(`Dos 6 números digitados, ${parValue} são pares e ${imparValue} são ímpares.`);
+
+        }
+        
+    </script>
+</body>
+</html>

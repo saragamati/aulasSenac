@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 31 - Aula 9</title>
+</head>
+<body>
+    <h1>Numguessr</h1>
+    <div>
+        <label>Digite o Número</label><input type="text" id="playerNumber"></input>
+    </div>
+    <div>
+        <input type="button" id="buttonOne" onclick="test()" value="Guess"></input>
+    </div> 
+    <script>
+        window.correctNumber = 0;
+        window.onload = function(e){
+
+            window.correctNumber = Math.floor((Math.random()+1)*50.5);
+
+        };
+
+        function test(){
+
+            var playerNumber = parseInt(document.getElementById("playerNumber").value);
+
+            var retMsg = "";
+
+            if(playerNumber == correctNumber){
+
+                retMsg = "Você Acertou!";
+
+            }else if(playerNumber > correctNumber){
+
+                retMsg = "Seu número é maior que o número correto";
+
+            }else{
+
+                retMsg = "Seu número é menor que o número correto";
+
+            }
+
+            alert(retMsg);
+
+        }
+    </script>
+</body>
+</html>

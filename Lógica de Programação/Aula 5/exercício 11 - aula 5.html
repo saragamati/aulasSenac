@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 11 - Aula 5</title>
+</head>
+<body>
+    <h1>Equação de Segundo Grau</h1>
+    <div>
+        <input type="text" id="a"></input>
+    </div>
+    <div>
+        <input type="text" id="b"></input>
+    </div>
+    <div>
+        <input type="text" id="c"></input>
+    </div>
+    <div>
+        <input type="button" id="buttonOne" onclick="delta()" value="Calcular Delta"></input>
+    </div> 
+    <script>
+        function delta()
+        {
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            var c = parseFloat(document.getElementById("c").value);
+            var delta = ((b * b) - (4 * a * c));
+
+            alert("O delta da função é igual a " + delta);
+        }
+    </script>
+</body>
+</html>

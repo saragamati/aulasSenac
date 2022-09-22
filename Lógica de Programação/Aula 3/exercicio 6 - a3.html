@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 6 - Aula 3</title>
+</head>
+<body>
+    <h1>Dobro e terça parte</h1>
+    <div>
+        <input type="text" id="numero1" name="numero1"></input>
+    </div>
+    <div>
+        <input type="button" id="botao1" name="botao1" onclick="alerta1()" value="Gerar dobro e terça parte"></input>
+    </div> 
+    <script>
+        function alerta1()
+        {
+            var n1 = document.getElementById("numero1").value;
+            var n2 = parseFloat(n1) * 2;
+            var n3 = parseFloat(n1) / 3; //se colocar toFixed(2) no final ali, ele vai limitar os resultados a ficarem com 2 casas decimais
+
+            console.log("O dobro de " + n1 + " é " + n2 + ".\nA terça parte de " + n1 + " é " + n3 + ".");
+            alert("O dobro de " + n1 + " é " + n2 + ".\nA terça parte de " + n1 + " é " + n3 + ".");
+        }
+    </script>
+</body>
+</html>

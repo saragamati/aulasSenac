@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 15 - Exemplo de Array</title>
+</head>
+<body>
+    <script>
+        window.onload = function(e){
+            var nomes = [];
+            var limit = 1;
+            var retMsg = "";
+
+            for(var pos=0;pos<limit;pos++){
+                nomes.push(window.prompt("Digite seu nome"));
+                var endVerify = window.prompt("Encerrar programa?\ny=sim n=não");
+
+                if(endVerify=="n"){
+                    limit++;
+                    retMsg += `${nomes[pos]}\n`;
+                }else{
+                    retMsg += `${nomes[pos]}`
+                }
+            }
+            alert(retMsg);
+        }
+    </script>
+</body>
+</html>

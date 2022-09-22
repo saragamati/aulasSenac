@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 32 - Aula 9</title>
+</head>
+<body>
+    <h1></h1>
+    <div>
+        <label>Valor da Casa</label><input type="text" id="housePrice"></input>
+    </div>
+    <div>
+        <label>Salário do Comprador</label><input type="text" id="buyerSalary"></input>
+    </div>
+    <div>
+        <label>Anos de Prestação</label><input type="text" id="yearsPaying"></input>
+    </div>
+    <div>
+        <input type="button" id="buttonOne" onclick="calc()" value="Prestação Mensal"></input>
+    </div> 
+    <script>
+        function calc(){
+
+            var housePrice = parseFloat(document.getElementById("housePrice").value).toFixed(2);
+            var buyerSalary = parseFloat(document.getElementById("buyerSalary").value).toFixed(2);
+            var yearsPaying = parseInt(document.getElementById("yearsPaying").value);
+            var portionPrice = parseFloat(housePrice/(yearsPaying*12)).toFixed(2);
+
+            var retMsg = "";
+
+            if(portionPrice > (0.3*buyerSalary)){
+
+                retMsg = "Seu empréstimo foi negado.\nMotivo: O valor das parcelas excedem 30% de seu salário"
+
+            }else{
+
+
+                retMsg = "O valor das prestações é de R$ " + portionPrice;
+
+            }
+
+
+            alert(retMsg);
+
+        }
+    </script>
+</body>
+</html>

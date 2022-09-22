@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Nova Calculadora - Aula 7</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <div>
+        <input type="text" id="numberOne"></input>
+    </div>
+    <div>
+        <input type="button" id="botaoSoma" onclick="calc('+')" value="+"></input>
+        <input type="button" id="botaoSub" onclick="calc('-')" value="-"></input>
+        <input type="button" id="botaoMulti" onclick="calc('x')" value="x"></input>
+        <input type="button" id="botaoDiv" onclick="calc('/')" value="/"></input>
+    </div> 
+    <div>
+        <input type="text" id="numberTwo"></input>
+    </div>
+    <script>
+        function calc(b)
+        {
+            var numOne = parseFloat(document.getElementById("numberOne").value);
+            var numTwo = parseFloat(document.getElementById("numberTwo").value);
+            var retMsg = "";
+
+            if(b == '+'){
+
+                var sum = numOne + numTwo;
+
+                retMsg = numOne + " + " + numTwo + " = " +  sum
+
+            }else if(b == '-'){
+
+                var sub = numOne - numTwo;
+
+                retMsg = numOne + " - " + numTwo + " = " +  sub
+
+            }
+            
+            alert(retMsg)
+
+
+        }
+
+    </script>
+</body>
+</html>

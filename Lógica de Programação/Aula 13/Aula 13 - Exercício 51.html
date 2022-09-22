@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 13 - Exercício 51</title>
+</head>
+<body>
+    <script>
+        window.onload = function(e){
+            var retMsg = "";
+            var highestPrice = 0.00;
+            var lowestPrice = Infinity;
+
+            for(count = 1;count<=8;count++){
+                var productPrice = Number(window.prompt(`Preço do produto ${count}`));
+                if(productPrice<lowestPrice){
+                    lowestPrice = productPrice;
+                }
+                if(productPrice>highestPrice){
+                    highestPrice = productPrice;
+                }
+            }
+            highestPrice = parseFloat(highestPrice).toFixed(2);
+            lowestPrice = parseFloat(lowestPrice).toFixed(2);
+            retMsg = `O maior preço digitado foi R$ ${highestPrice}\nO menor preço digitado foi R$ ${lowestPrice}`;
+            alert(retMsg);
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 34 - Aula 9</title>
+</head>
+<body>
+    <h1>Aluguel de carros</h1>
+    <div>
+        <label>Tipo de Carro</label><input type="text" id="carType"></input>
+    </div>
+    <div>
+        <label>Diárias</label><input type="text" id="daysRented"></input>
+    </div>
+    <div>
+        <label>Km rodados</label><input type="text" id="distCovered"></input>
+    </div>
+    <div>
+        <input type="button" id="buttonOne" onclick="calc()" value="Calcular Valor do Aluguel"></input>
+    </div> 
+    <script>
+        function calc(){
+
+            var carType = String(document.getElementById("carType").value);
+            var daysRented = parseInt(document.getElementById("daysRented").value);
+            var kmCovered = parseInt(document.getElementById("distCovered").value);
+
+            var retMsg = "Valor do aluguel: R$ ";
+            var totalValue = 0.00;
+            
+                if(carType == "popular"){
+                    var dailyPop = daysRented*90;
+                    if(kmCovered <= 100){
+                        totalValue = parseFloat(dailyPop + (kmCovered*0.2)).toFixed(2);
+                        retMsg = retMsg + totalValue;
+                    }
+                    else{
+                        totalValue = parseFloat(dailyPop + (kmCovered*0.1)).toFixed(2);
+                        retMsg = retMsg + totalValue;
+                    }
+                }if(carType == "luxo"){
+                    var dailyLuxury = daysRented*150;
+                    if(kmCovered <= 200){
+                        totalValue = parseFloat(dailyLuxury + (kmCovered*0.3)).toFixed(2);
+                        retMsg = retMsg + totalValue;
+                    }
+                    else{
+                        totalValue = parseFloat(dailyLuxury + (kmCovered*0.25)).toFixed(2);
+                        retMsg = retMsg + totalValue;
+                    }
+                }
+
+            alert(retMsg);
+
+        }
+    </script>
+</body>
+</html>

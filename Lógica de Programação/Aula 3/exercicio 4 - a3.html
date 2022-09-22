@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 4 - Aula 3</title>
+</head>
+<body>
+    <h1>Média de duas notas de um aluno</h1>
+    <div>
+        <input type="text" id="notaOne" name="notaOne"></input>
+    </div>
+    <div>
+        <input type="text" id="notaTwo" name="notaTwo"></input>
+    </div>
+    <div>
+        <input type="button" id="botao" name="botao" onclick="exibeMedia()" value="Exibir Média"></input>
+    </div> 
+    <script>
+        function exibeMedia()
+        {
+            var nOne = document.getElementById("notaOne").value;
+            var nTwo = document.getElementById("notaTwo").value;
+            var nFinal = (parseFloat(nOne) + parseFloat(nTwo)) / 2;
+
+            console.log("A média entre " + nOne + " e " + nTwo + " é " + nFinal + ".");
+            alert("A média entre " + nOne + " e " + nTwo + " é " + nFinal + ".");
+        }
+
+    </script>
+</body>
+</html>
