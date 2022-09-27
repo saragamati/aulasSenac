@@ -1,20 +1,33 @@
 body{
     background-color: rgb(70, 142, 236);
     font: normal 15pt Arial;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 header{
+
     color: white;
-    text-align: center;
+    text-align: left;
 }
 
-section{
+/*section{
     background-color: white;
     border-radius: 10px;
     box-shadow: 3px 3px 10px black;
     margin: auto;
-    width: 450px;
     text-align: center;
+}*/
+
+.container{
+    width: 450px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px black;
 }
 
 div{

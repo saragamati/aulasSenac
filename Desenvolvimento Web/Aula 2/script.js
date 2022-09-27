@@ -47,7 +47,7 @@ function scriptzinho(){
         }else{
             img.setAttribute("src", "idosoF.jpg");
             divDescricao.innerHTML = `É uma idosa de ${personAge} anos.`;
-            document.body.style.background = "aquamarine";
+            document.body.style.background = "aqua";
         }
     }
     divFoto.appendChild(img);
