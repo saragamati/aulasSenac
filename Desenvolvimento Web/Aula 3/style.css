@@ -1,3 +1,220 @@
 .container-header{
     background-color: #06AA48;
+    height: 74px;
+    display: flex;
 }
+
+.divBurger{
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-left: 110px;
+}
+
+.divMenu{
+    margin-top: 25px;
+    margin-left: 3px;
+    width: 60px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.divIconGE{
+    color: white;
+    margin-top: 13px;
+    font-size: 35px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    width: 60px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.iconGE{
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+}
+
+.shieldMenu{
+    width: 40px;
+    display: inline-block;
+    margin-top: 22px;
+    padding-left: 25px;
+}
+
+.headerBrasileirao{
+    width: 955px;
+    margin-top: 10px;
+    text-align: center;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 32px;
+    font-weight: lighter;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    word-wrap: normal;
+    display: inline-block;
+}
+
+.searchMenu{
+    background-color: #05913D;
+    display: flex;
+    height: 34px;
+    margin-top: 21px;
+}
+.searchMenu:has(input:focus){
+    background-color: white;
+    
+}
+.searchMenu input:focus-visible{
+    border: none;
+    outline: 0;
+    box-sizing: none;
+    box-decoration-break: none;
+    box-shadow: 0 0 0 0;
+}
+.searchMenu-img{
+    width: 32px;
+    height: 34px;
+    display: flex;
+}
+
+.img-lupa-search{
+    width: 25px;
+    height: 25px;
+    margin: auto;
+}
+
+.searchMenu-text{
+    display: flex;
+}
+.searchBar{
+    background-color: transparent;
+    border: none;
+    padding-left:10px;
+    padding-top: 2px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    transition: width 0.35s;
+}
+.searchBar:focus-visible{
+    color: black;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.searchBar:focus-visible::placeholder{
+    color: grey;
+}
+.searchBar::placeholder{
+    color: white;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.header-nav-tabs{
+    background-color: #06AA48;
+    height: 60px;
+    display: flex;
+}
+.item-tab{
+    display: inline-block;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 22px;
+    font-weight: bolder;
+    color: #82d4a3;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.item-tab:hover{
+    color: white;
+}
+.item-tab-class{
+    display: inline-block;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 22px;
+    font-weight: bolder;
+    color: #82d4a3;
+    margin-right: 20px;
+    margin-left: 70px;
+    cursor: pointer;
+}
+.item-tab-class:hover{
+    color: white;
+}
+
+/* TABELA COMEÇA AQUI */
+table{
+    border-spacing: 0;
+}
+
+.tabela-campeonato{
+    display: flex;
+    height: auto;
+    margin-top: 40px;
+    margin-left: 150px;
+}
+
+.tabela-brasileirao-a{
+    color: #333;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 20px;
+
+}
+
+.tabela-header{
+    color: #111;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.625em;
+    font-weight: bold;
+    letter-spacing: -0.04em;
+    line-height: 1.75em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.tabela-jogos-header{
+    color: #111;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.625em;
+    font-weight: bold;
+    letter-spacing: -0.04em;
+    line-height: 1.75em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.tabela-head{
+    letter-spacing: -0.3px;
+    font-size: 11px;
+    vertical-align: middle;
+    color: #999;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.tabela-head-coluna-a{
+    padding: unset;
+    text-align: left;
+    border-top: solid 1px #999;
+    border-bottom: solid 1px #999;
+}
+.tabela-head-coluna{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 21px;
+    padding-right: 21px;
+    text-align: center;
+    border-top: solid 1px #999;
+    border-bottom: solid 1px #999;
+}
+.tabela-pontos-corridos-body{
+    padding: 21px;
+    text-align: center;
+    background-color: #fcfcfc;
+}
+td:nth-child(even){
+    background-color: #f5f5f5;
+}
+
