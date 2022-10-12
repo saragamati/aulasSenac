@@ -151,7 +151,6 @@
 table{
     border-spacing: 0;
 }
-
 .tabela-campeonato{
     display: flex;
     height: auto;
@@ -176,16 +175,6 @@ table{
     margin-bottom: 10px;
     text-transform: uppercase;
 }
-.tabela-jogos-header{
-    color: #111;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1.625em;
-    font-weight: bold;
-    letter-spacing: -0.04em;
-    line-height: 1.75em;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
 
 .tabela-head{
     letter-spacing: -0.3px;
@@ -199,6 +188,7 @@ table{
     text-align: left;
     border-top: solid 1px #999;
     border-bottom: solid 1px #999;
+    width: 250px;
 }
 .tabela-head-coluna{
     padding-top: 15px;
@@ -213,8 +203,118 @@ table{
     padding: 21px;
     text-align: center;
     background-color: #fcfcfc;
+    border-bottom: solid 1px #999;
+    font-size: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 td:nth-child(even){
     background-color: #f5f5f5;
 }
+.tabela-pontos-corridos-body-a{
+    border-bottom: solid 1px #999;
+    text-align: left;
+    font-size: 17px;
+    letter-spacing: -0.03em;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.tabela-pontos-corridos-body-b{
+    padding: 21px;
+    text-align: center;
+    background-color: #fcfcfc;
+    border-bottom: solid 1px #999;
+    font-size: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+}
+.tabela-pontos-corridos-body-a > span{
+    color: #00f;
+    padding-right: 15px;
 
+}
+.last-five-win{
+    background-color: green;
+    width: 6px;
+    height: 6px;
+    display: inline-block;
+    border-radius: 3px;
+}
+.last-five-loss{
+    background-color: red;
+    width: 6px;
+    height: 6px;
+    display: inline-block;
+    border-radius: 3px;
+}
+.last-five-draw{
+    background-color: gray;
+    width: 6px;
+    height: 6px;
+    display: inline-block;
+    border-radius: 3px;
+}
+.jogos-rodada-campeonato{
+    margin-left: 32px;
+    padding-left: 32px;
+    border-left: solid 1px #999;
+}
+.tabela-jogos-header{
+    color: #111;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.625em;
+    font-weight: bold;
+    letter-spacing: -0.04em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    margin-top: 38px;
+}
+.rodada-main{
+    height: 40px;
+    border-top: solid 1px #999;
+    width: 400px;
+    border-bottom: solid 1px #999;
+    display: flex;
+    align-items: center;
+}
+.rodada-seta-left{
+    display: inline-block;
+    text-align: left;
+    width: 75px;
+    vertical-align: center;
+}
+.rodada-seta-left > svg{
+    transform: rotate(180deg);
+    stroke-width: 10px;
+    height: 1em;
+    cursor: pointer;
+}
+.rodada-text{
+    display: inline-block;
+    text-align: center;
+    vertical-align: center;
+    width: 250px;
+}
+.rodada-seta-right{
+    display: inline-block;
+    text-align: right;
+    width: 75px;
+    vertical-align: center;
+    cursor: pointer;
+}
+.rodada-seta-right > svg{
+    stroke-width: 10px;
+    height: 1em;
+}
+.rodada-text{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 500px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.rodadas-jogos-main{
+    display: flex;
+}
+.rodadas-jogos{
+    height: 110px;
+    border-bottom: solid 1px #999;
+}
