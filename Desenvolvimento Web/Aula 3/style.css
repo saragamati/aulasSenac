@@ -311,10 +311,94 @@ td:nth-child(even){
     text-transform: uppercase;
     font-weight: bold;
 }
-.rodadas-jogos-main{
+.jogos-rodada{
+    padding: 0;
+    margin: 0;
+}
+ul{
+    list-style-type: none;
+}
+.jogos-rodada-jogo{
+    border-bottom: solid 1px #999;
+}
+.jogo-theme{
+    height: 109px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.jogo-informacoes{
+    color: #555;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 0.6875em;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -.3px;
+    text-transform: uppercase;
+    padding-top: 20px;
+}
+.jogo-informacoes-local{
+    font-weight: normal;
+}
+.jogo-placar{
+    align-items: center;
+    color: #333;
+    display: flex;
+    height: 4em;
+    justify-content: center;
+}
+.jogo-placar-equipe-mandante{
+    display: flex;
+    width: fit-content;
+}
+.jogo-placar-equipe-mandante span{
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    margin: auto 0px;
+
+}
+.img-mandante{
+    margin: auto 0px;
+}
+.img-visitante{
+    margin: auto 0px;
+}
+.jogo-placar-equipe-visitante div img{
+    width: 35px;
+    height: 35px;
+    margin: auto 0px;
+    margin-right: 8px;
+}
+
+.jogo-placar-equipe-mandante div img{
+    width: 35px;
+    height: 35px;
+    margin: auto 0px;
+    margin-left: 8px;
+}
+.jogo-placar-box-resultado{
+    width: 30%;
+    height: 100%;
+    color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.jogo-placar-box-versus{
+    height: 8px;
+    width: 9px;
     display: flex;
 }
-.rodadas-jogos{
-    height: 110px;
-    border-bottom: solid 1px #999;
+.jogo-placar-equipe-visitante{
+    display: flex;
+}
+.jogo-placar-equipe-visitante img{
+    margin-right: 8px;
+}
+.jogo-placar-equipe-visitante span{
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    margin: auto 0px;
 }
