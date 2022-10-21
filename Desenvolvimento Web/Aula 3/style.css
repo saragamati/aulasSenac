@@ -3,6 +3,9 @@
     height: 74px;
     display: flex;
 }
+body{
+    margin: 0;
+}
 
 .divBurger{
     display: inline-block;
@@ -45,6 +48,97 @@
     margin-top: 22px;
     padding-left: 25px;
 }
+
+.shieldMenu:hover .mosaico-popup-seta-up{
+    display: block;
+    transition: 1s ease-in-out all;
+}
+
+.shieldMenu:hover .mosaico-popup{
+    display: block;
+    transition: 1s ease-in-out all;
+}
+/* POPUP DO ESCUDO COMEÇA AQUI */
+
+.mosaico-popup-seta-up{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid white;
+    margin-left: 3px;
+    z-index: 1;
+    display: none;
+}
+
+.mosaico-popup{
+    display: none;
+    position: absolute;
+    width: 240px;
+    background-color: white;
+    margin-left: -20px;
+    margin-top: 5px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 2px 2px #999;
+}
+
+.mosaico-header{
+    display: block;
+    margin-top: 10px;
+    margin-left: 8px;
+}
+
+.mosaico-header-series{
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    border: solid 1px #999;
+    cursor: pointer;
+}
+
+.mosaico-header-series:first-child{
+    border-bottom: solid 2px green;
+}
+
+.mosaico-header-series-span{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.mosaico-header-series-span-a{
+    color: green;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.mosaico-main{
+    display: block;
+    justify-content: center;
+}
+
+.mosaico-main-times{
+    margin-left: 2px;
+    
+}
+
+.mosaico-time{
+    display: inline-block;
+    padding: 10px;
+}
+
+.mosaico-time img{
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+}
+
+/* FINAL DA POPUP DO ESCUDO COMEÇA AQUI */
 
 .headerBrasileirao{
     width: 955px;
