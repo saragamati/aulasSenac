@@ -51,12 +51,10 @@ body{
 
 .shieldMenu:hover .mosaico-popup-seta-up{
     display: block;
-    transition: 1s ease-in-out all;
 }
 
 .shieldMenu:hover .mosaico-popup{
     display: block;
-    transition: 1s ease-in-out all;
 }
 /* POPUP DO ESCUDO COMEÇA AQUI */
 
@@ -94,27 +92,28 @@ body{
     text-align: center;
     width: 30%;
     border: solid 1px #999;
-    cursor: pointer;
 }
 
-.mosaico-header-series:first-child{
-    border-bottom: solid 2px green;
+.mosaico-input-serie-a{
+    
 }
 
-.mosaico-header-series-span{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    color: #999;
-    text-transform: uppercase;
+.mosaico-input-serie-b{
+    
 }
 
-.mosaico-header-series-span-a{
-    color: green;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
+.mosaico-input-europa{
+    
+}
+
+.mosaico-input-serie-a[type=radio]{
+    display: none;
+}
+.mosaico-input-serie-b[type=radio]{
+    display: none;
+}
+.mosaico-input-europa[type=radio]{
+    display: none;
 }
 
 .mosaico-main{
@@ -320,11 +319,27 @@ td:nth-child(even){
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 700;
 }
-.tabela-pontos-corridos-body-a > span{
+.team-place-number-lib{
     color: #00f;
     padding-right: 15px;
-
 }
+.team-place-number-prelib{
+    color: #00ffff;
+    padding-right: 15px;
+}
+.team-place-number-sula{
+    color: #008000;
+    padding-right: 15px;
+}
+.team-place-number-none{
+    color: #999999;
+    padding-right: 15px;
+}
+.team-place-number-reb{
+    color: #ff0000;
+    padding-right: 15px;
+}
+
 .last-five-win{
     background-color: green;
     width: 6px;
