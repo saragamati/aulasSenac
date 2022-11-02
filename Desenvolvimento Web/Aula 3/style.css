@@ -73,7 +73,7 @@ body{
 .mosaico-popup{
     display: none;
     position: absolute;
-    width: 240px;
+    width: 250px;
     background-color: white;
     margin-left: -20px;
     margin-top: 5px;
@@ -130,14 +130,47 @@ body{
     font-weight: 700;
     cursor: pointer;
 }
-
-.mosaico-header:has(input[type='radio']:checked) .mosaico-label-serie-a{
-    color: green;
+.mosaico-main-a{
+    display: none;
+    justify-content: center;
+}
+.mosaico-main-b{
+    display: none;
+    justify-content: center;
+}
+.mosaico-main-e{
+    display: none;
+    justify-content: center;
 }
 
-.mosaico-main{
+.mosaico-header:has(input[type='radio'].mosaico-input-serie-a:checked) .mosaico-header-block-a{
+    border-bottom: solid 2px green;
+}
+.mosaico-header:has(input[type='radio'].mosaico-input-serie-a:checked) .mosaico-label-serie-a{
+    color: green;
+}
+.mosaico-header:has(input[type='radio'].mosaico-input-serie-a:checked) .mosaico-main-a{
     display: block;
-    justify-content: center;
+}
+
+.mosaico-header:has(input[type='radio'].mosaico-input-serie-b:checked) .mosaico-header-block-b{
+    border-bottom: solid 2px green;
+}
+.mosaico-header:has(input[type='radio'].mosaico-input-serie-b:checked) .mosaico-label-serie-b{
+    color: green;
+}
+.mosaico-header:has(input[type='radio'].mosaico-input-serie-b:checked) .mosaico-main-b{
+    display: block;
+}
+
+.mosaico-header:has(input[type='radio'].mosaico-input-europa:checked) .mosaico-header-block-e{
+    border-bottom: solid 2px green;
+}
+.mosaico-header:has(input[type='radio'].mosaico-input-europa:checked) .mosaico-label-europa{
+    color: green;
+}
+.mosaico-header:has(input[type='radio'].mosaico-input-europa:checked) .mosaico-main-e{
+    display: block;
 }
 
 .mosaico-main-times{
@@ -581,19 +614,22 @@ ul{
 }
 @media screen and (max-width: 425px) {
     .tabela-head-coluna{
-        padding-top: 8px;
-        padding-bottom: 8px;
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-left: 3px;
+        padding-right: 3px;
     }
     .tabela-pontos-corridos-body-b{
-        padding: 10px;
+        padding: 8px;
     }
     .tabela-pontos-corridos-body{
-        padding: 10px;
+        padding: 8px;
     }
     .headerBrasileirao{
         font-size: 25px;
         margin-top: 15px;
+    }
+    .tabela-pontos-corridos-body-a{
+        font-size: 14px;
     }
 }
