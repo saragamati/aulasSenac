@@ -1,0 +1,212 @@
+.top-header-nav{
+    background-color: #f3f3f3;
+}
+
+.top-header-nav-noticias{
+    color: #c4170c;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: -0.02em;
+    font-family: arial,helvetica,sans-serif;
+    padding: 9px 7px 12px 7px;
+    border-top: solid 2px #f3f3f3;
+}
+.top-header-nav-noticias:hover{
+    color: #c4170c;
+    border-top: solid 2px #c4170c;
+}
+
+.top-header-nav-esportes{
+    color: #06aa48;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: -0.02em;
+    font-family: arial,helvetica,sans-serif;
+    padding: 9px 7px 12px 7px;
+    border-top: 2px;
+    border-top: solid 2px #f3f3f3;
+}
+.top-header-nav-esportes:hover{
+    color: #06aa48;
+    border-top: solid 2px #06aa48;
+}
+
+.top-header-nav-gshow{
+    color: #ff6700;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: -0.02em;
+    font-family: arial,helvetica,sans-serif;
+    padding: 9px 7px 12px 7px;
+    border-top: solid 2px #f3f3f3;
+}
+.top-header-nav-gshow:hover{
+    color: #ff6700;
+    border-top: solid 2px #ff6700;
+}
+
+.top-header-nav-videos{
+    color: #fb0234;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: -0.02em;
+    font-family: arial,helvetica,sans-serif;
+    padding: 9px 7px 12px 7px;
+    border-top: solid 2px #f3f3f3;
+}
+.top-header-nav-videos:hover{
+    color: #fb0234;
+    border-top: solid 2px #fb0234;
+}
+
+.top-header-nav-assine{
+    color: #999;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 15px 12px 13px 4px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.top-header-nav-button{
+    height: 22px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #666666;
+    background-color: #f3f3f3;
+    background-image: -webkit-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,0) 50%,rgba(0,0,0,0.07) 100%);
+    border-radius: 3px;
+}
+.top-header-nav-button:hover{
+    color: #1063e0;
+    background-color: #fff;
+    background-image: -webkit-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,0) 50%,rgba(0,0,0,0.07) 100%);
+}
+
+.container-header-left-side{
+    display: flex;
+}
+
+.mid-header-nav{
+    background-color: #06aa48;
+}
+.header-burger-button{
+    box-shadow: none !important;
+    outline: none !important;
+    border: none;
+    color: #ffffff;
+    display: flex;
+    align-items: center
+}
+.header-burger-font{
+    font-size: 32px;
+}
+.header-burger-menu-text{
+    font-size: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: -0.015em;
+}
+.header-logo{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.ge-svg-logo{
+    width: 34px;
+}
+.header-shield{
+    color: #ffffff;
+}
+.header-shield i{
+    font-size: 24px;
+}
+.header-title{
+    color: #ffffff;
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight: lighter;
+    letter-spacing: -0.04em;
+    cursor: pointer;
+}
+
+.header-bottom-nav{
+    background-color: #06aa48;
+}
+.header-bottom-nav-items{
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    letter-spacing: -.5px;
+    
+}
+
+.header-bottom-nav-link{
+    color: #fff;
+    opacity: .5;
+}
+.header-bottom-nav-link:hover{
+    color: #fff;
+    opacity: unset;
+}
+.header-bottom-nav-link:focus{
+    opacity: unset;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+
+/* MAIN */
+
+.tabela-text-header{
+    color: #111;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.625em;
+    font-weight: bold;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    width: 65%;
+}
+
+.tabela-campeonato{
+    width: 65%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+.tabela-campeonato-head{
+    border-top: 1px solid #dee2e6;
+}
+
+.tabela-campeonato th{
+    color: #999999 !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.3px;
+    font-size: 11px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.tabela-campeonato th:first-child{
+    text-align: left;
+}
+
+.tabela-campeonato td{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    color: #333333;
+    text-align: center;
+}
+
+.tabela-campeonato td:first-of-type{
+    text-align: left;
+}
+
+.jogos-text-header{
+    color: #111;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.625em;
+    font-weight: bold;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    width: 35%;
+}
