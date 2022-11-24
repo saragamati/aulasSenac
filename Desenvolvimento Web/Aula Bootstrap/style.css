@@ -1,6 +1,20 @@
 .top-header-nav{
     background-color: #f3f3f3;
 }
+.top-header-nav-list{
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-header-nav-items-bar{
+    display: flex;
+    align-items: center;
+}
+
+.top-header-nav-items-servicos{
+    display: flex;
+    align-items: center;
+}
 
 .top-header-nav-noticias{
     color: #c4170c;
@@ -68,14 +82,15 @@
 }
 
 .top-header-nav-button{
-    height: 22px;
     font-size: 12px;
+    padding: 3px 3px 2px 2px !important;
     text-transform: uppercase;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #666666;
     background-color: #f3f3f3;
     background-image: -webkit-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,0) 50%,rgba(0,0,0,0.07) 100%);
     border-radius: 3px;
+    text-align: center;
 }
 .top-header-nav-button:hover{
     color: #1063e0;
@@ -112,12 +127,15 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    margin-left: 15px;
 }
 .ge-svg-logo{
     width: 34px;
 }
 .header-shield{
     color: #ffffff;
+    padding-left: 20px;
+    margin-left: 20px;
 }
 .header-shield i{
     font-size: 24px;
@@ -130,7 +148,52 @@
     letter-spacing: -0.04em;
     cursor: pointer;
 }
+.header-search-area{
+    display: flex;
+}
+.header-search-area-busca{
+    background-color: #05913d;
+    border-radius: 4px;
+    width: auto;
+}
+.header-search-area-busca:has(input[type=search]:focus-visible){
+    background-color: white;
+}
+.header-search-area-busca-lupa{
+    display: inline-block;
+    padding: 2px 7px 2px 7px;
+}
 
+.header-search-area-busca-lupa-svg{
+    color: white;
+}
+.header-search-area-busca:has(input[type=search]:focus-visible) .header-search-area-busca-lupa-svg{
+    color: gray;
+}
+
+.header-search-area-busca-botao{
+    background-color: transparent;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    outline: none;
+    width: 129px;
+    height: 25px;
+}
+.header-search-area-busca-botao::placeholder{
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: -0.015em;
+}
+.header-search-area-busca:has(input[type=search]:focus-visible) .header-search-area-busca-botao{
+    width: 240px;
+}
+.header-search-area-busca:has(input[type=search]:focus-visible) .header-search-area-busca-botao::placeholder{
+    color: gray;
+}
 .header-bottom-nav{
     background-color: #06aa48;
 }
@@ -161,6 +224,7 @@
 .container-main-content{
     display: flex;
     justify-content: center;
+    margin-top: 40px;
 }
 .container-main-table-content{
     width: 65%;
@@ -220,4 +284,7 @@
     font-weight: bold;
     letter-spacing: -0.04em;
     text-transform: uppercase;
+}
+.area-jogos-list-head{
+    border-top: solid 1px rgba(0, 0, 0, 0.125);
 }

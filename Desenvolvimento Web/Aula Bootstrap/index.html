@@ -17,33 +17,37 @@
     <title>tabela | brasileirão série a 2022</title>
 </head>
 <body>
-    <header>   
-        <ul class="nav top-header-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <img src="https://barra.globo.com/gl/ba/oidc/img/logo.png" class="img-fluid" alt="globo.com">
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link top-header-nav-noticias" href="#">g1</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active top-header-nav-esportes" aria-current="page" href="#">ge</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link top-header-nav-gshow" href="#">gshow</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link top-header-nav-videos" href="#">
-                    <img src="https://s3.glbimg.com/v1/AUTH_ba8e460c944543468c3c80cb9675751f/logos/globoplay/logo_globoplay.svg" class="img-fluid" style="height: 28px;">
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link top-header-nav-assine" href="#">assine já</a>
-            </li>
-            <button type="button" class="btn btn-secondary top-header-nav-button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                Entrar >
-            </button>
+    <header>  
+        <ul class="nav top-header-nav top-header-nav-list">
+            <div class="top-header-nav-items-bar">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <img src="https://barra.globo.com/gl/ba/oidc/img/logo.png" class="img-fluid" alt="globo.com">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link top-header-nav-noticias" href="#">g1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active top-header-nav-esportes" aria-current="page" href="#">ge</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link top-header-nav-gshow" href="#">gshow</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link top-header-nav-videos" href="#">
+                        <img src="https://s3.glbimg.com/v1/AUTH_ba8e460c944543468c3c80cb9675751f/logos/globoplay/logo_globoplay.svg" class="img-fluid" style="height: 28px;">
+                    </a>
+                </li>
+            </div>
+            <div class="top-header-nav-items-servicos">
+                <li class="nav-item">
+                    <a class="nav-link top-header-nav-assine" href="#">assine já</a>
+                </li>
+                <button type="button" class="btn btn-secondary top-header-nav-button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                    Entrar >
+                </button>
+            </div>  
         </ul>
 
         <nav class="navbar mid-header-nav">
@@ -97,11 +101,14 @@
                 <div>
                     <span class="header-title">brasileirão série a</span>  
                 </div>
-                <div>
-                    <form class="d-flex" role="search">
-                        <i class="bi bi-search"></i>
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    </form>
+                <div class="header-search-area">
+                    <div class="header-search-area-busca">
+                        <div class="header-search-area-busca-lupa">
+                            <i class="bi bi-search header-search-area-busca-lupa-svg"></i>
+                        </div>
+                        <input type="search" placeholder="buscar" class="header-search-area-busca-botao">
+                    </div>
+                    
                 </div>
             </div>
         </nav>
@@ -482,6 +489,11 @@
                     <h3 class="jogos-text-header">jogos</h3>
                 </header>
                 <ul class="list-group list-group-flush">
+                    <li class="list-group-item area-jogos-list-head">
+                        <i class="bi bi-chevron-compact-left"></i>
+                        <span>38ª rodada</span>
+                        <i class="bi bi-chevron-compact-right"></i>
+                    </li>
                     <li class="list-group-item">jogo 1</li>
                     <li class="list-group-item">jogo 2</li>
                     <li class="list-group-item">jogo 3</li>
