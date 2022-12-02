@@ -221,6 +221,10 @@
 }
 
 /* MAIN */
+main{
+    margin-left: 8%;
+    margin-right: 8%;
+}
 
 .container-main-content{
     display: flex;
@@ -368,4 +372,73 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-transform: uppercase;
     font-weight: 700;
+}
+.artilheiros-list-header{
+    display: flex;
+    width: 100%;
+}
+.artilheiros-list-header--ranking{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 11px;
+    color: #999999;
+    text-transform: uppercase;
+}
+.artilheiros-list-header--gols{
+    margin-left: auto;
+    padding-right: 65px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 11px;
+    color: #999999;
+    text-transform: uppercase;
+}
+.list-artilheiros{
+    overflow: auto;
+    height: 350px;
+    padding: unset;
+}
+.list-artilheiros-container{
+    display: flex;
+}
+.list-artilheiros--ranking{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 28px;
+    color: #999999;
+    width: 30px;
+}
+.list-artilheiros--jogador{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.list-jogador--foto img{
+    display: block;
+    border-radius: 50px;
+}
+.list-jogador--foto{
+    border-radius: 50px;
+    background-color: #F1F1F1;
+    margin-right: 10px;
+}
+.list-jogador--info{
+    margin-left: 20px;
+}
+.list-jogador-info--nome{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    color: #333;
+    letter-spacing: -1px;
+}
+.list-jogador-info--pos{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #999;
+    font-weight: bold;
+}
+.list-jogador--gols{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 26px;
+    color: #333;
+    font-weight: bold;
+    margin-left: auto;
 }
