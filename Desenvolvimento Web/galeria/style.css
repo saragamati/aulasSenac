@@ -1,3 +1,22 @@
 :root{
+    --main-bg-color: #161a42;
+    --main-head-bg: #0b0d21;
+}
+body{
+    background-color: var(--main-bg-color) !important;
+}
+.header-nav{
+    background-color: var(--main-head-bg);
+}
+.header-name{
+    color: white !important;
+}
+.header-nav-list-items{
+    color: white !important;
+}
+.main-home{
+    display: flex;
+}
+.main-home--descricao{
     
 }
