@@ -23,7 +23,44 @@ function createCadastroRow(){
     ageCell.innerHTML = formAge;
     genderCell.innerHTML = formGender;
 
-    var editButton = document.createElement('editButton');
+    //criando o botão de editar campos
+
+    var editButton = document.createElement('BUTTON');
     var editIcon = document.createElement('i');
-    editButton.setAttribute('type','button');
+
+    editIcon.setAttribute("class","bi bi-pencil");
+    
+    editButton.setAttribute("class","btn btn-primary");
+    editButton.setAttribute("onclick","showEditFields(this)");
+    editButton.setAttribute("data-bs-toggle","modal");
+    editButton.setAttribute("data-bs-target","#staticBackdrop");
+    editButton.innerHTML = editIcon.outerHTML;
+
+    iconsCell.innerHTML = editButton.outerHTML;
+
+    //criando o botão de remover o cadastro
+
+    var deleteButton = document.createElement('BUTTON');
+    var deleteIcon = document.createElement('i');
+
+    deleteIcon.setAttribute("class","bi bi-trash");
+    
+    deleteButton.setAttribute("class","btn btn-danger");
+    deleteButton.setAttribute("onclick","deleteRow(this)");
+    deleteButton.innerHTML = deleteIcon.outerHTML;
+
+    iconsCell.innerHTML += deleteButton.outerHTML;
+}
+
+function showEditFields(btn){
+    var currentRow = btn.closest("tr");
+    var TDElements = currentRow.cells;
+
+    //salvando os dados antigos em variáveis
+    var currentName = TDElements[0].innerHTML;
+    var currentAge = TDElements[1].innerHTML;
+    var currentGender = TDElements[2].innerHTML;
+
+
+    console.log(currentName, currentAge, currentGender);
 }
