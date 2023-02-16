@@ -1,3 +1,17 @@
-.FormsFieldContainer{
+
+.FormsFieldContainer_hidden{
     display: none;
+}
+.FormsFieldContainer_show{
+    display: flex;
+}
+.header_container{
+    display: flex;
+    justify-content: left;
+    padding-left: 80px;
+    padding-top: 20px;
+}
+.table_main{
+    padding-left: 80px;
+    padding-right: 80px;
 }

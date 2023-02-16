@@ -10,11 +10,11 @@
     <title>Cadastro</title>
 </head>
 <body>
-    <div>
+    <div class="header_container">
         <input type="button" value="Novo" class="btn btn-primary" onclick="abrirCamposCadastro()">
-        <div class="FormsFieldContainer" id="FormsField">
-            <input type="text" name="" id="createNameField" placeholder="Nome">
-            <input type="number" name="" id="createIdadeField" placeholder="Idade">
+        <div class="FormsFieldContainer_hidden" id="FormsField">
+            <input type="text" name="" id="createNameField" placeholder="Nome" onkeydown="onlyLetters(event)">
+            <input type="number" name="" id="createIdadeField" placeholder="Idade" min="0" max="100" onkeydown="onlyNumbers(event)">
             <select name="genders" id="createGenderField">
                 <option value="Masculino">Masculino</option>
                 <option value="Feminino">Feminino</option>
@@ -29,45 +29,46 @@
         <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar Cadastro</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="" id="">
-                    <input type="text" name="" id="createNameField" placeholder="Nome">
-                    <input type="number" name="" id="createIdadeField" placeholder="Idade">
-                    <select name="genders" id="createGenderField">
+                    <input type="text" name="" id="editNameField" placeholder="Nome">
+                    <input type="number" name="" id="editIdadeField" placeholder="Idade">
+                    <select name="genders_edit" id="editGenderField">
                         <option value="Masculino">Masculino</option>
                         <option value="Feminino">Feminino</option>
                         <option value="Outro">Outro</option>
                     </select>
-                    <input type="button" class="btn btn-success" value="+" onclick="">
                 </div>
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Understood</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar Edição</button>
+            <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="alterarCadastro()">Confirmar</button>
             </div>
         </div>
         </div>
     </div>
     
-    <table class="table" id="FormsTable">
-        <thead>
-            <tr>
-                <th scope="col">Nome</th>
-                <th scope="col">Idade</th>
-                <th scope="col">Sexo</th>
-                <th scope="col">Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-        </tbody>
-    </table>
-    
+    <div class="table_main">
+        <table class="table" id="FormsTable">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Idade</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="script.js"></script>
-    <script src="createdButtons.js"></script>
+    <script src="masking.js"></script>
 </body>
 </html>
