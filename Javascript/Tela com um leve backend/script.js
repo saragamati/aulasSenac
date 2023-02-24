@@ -1,6 +1,9 @@
 window.onload = function(e){ 
     this.importData();
 }
+function clearGrid(){
+    $("#FormsTable tbody tr").remove();
+}
 function importData(){
     $.ajax({
         method: "POST",
@@ -9,6 +12,7 @@ function importData(){
         data: { acao: "consultar", dbname: "UsuarioLeonardo"}
     })
     .done(function(result){
+        clearGrid();
         fillGrid(result);
     })
     .fail(function(jqXHR, textStatus, msg){
@@ -58,7 +62,7 @@ function fillGrid(list){
         deleteIcon.setAttribute("class","bi bi-trash");
 
         deleteButton.setAttribute("class","btn btn-danger");
-        deleteButton.setAttribute("onclick","deleteRow(this)");
+        deleteButton.setAttribute("onclick","deleteCadastro(this)");
         deleteButton.innerHTML = deleteIcon.outerHTML;
 
         iconsCell.innerHTML += deleteButton.outerHTML;
@@ -67,6 +71,8 @@ function fillGrid(list){
         var eleId = element.Id;
         hiddenId.setAttribute("type","hidden");
         hiddenId.setAttribute("value",eleId);
+        row.appendChild(hiddenId);
+
     });
     console.log(list);
 }
@@ -84,62 +90,12 @@ function abrirCamposCadastro(){
     
 }
 
-function createCadastroRow(){
-    //Valores dos Formulários:
+    function createCadastroRow(){
     var formName = document.getElementById('createNameField').value;
     var formAge = document.getElementById('createIdadeField').value;
     var formGender = document.getElementById('createGenderField').value;
-
-    var tableElement = document.getElementById('FormsTable');
-    var tbodyRef = tableElement.querySelector('tbody');
-    var row = tbodyRef.insertRow(0);
-    var nameCell = row.insertCell(0);
-    var ageCell = row.insertCell(1);
-    var genderCell = row.insertCell(2);
-    var iconsCell = row.insertCell(3);
-
-    //Inserindo valores do formulário à tabela:
-    nameCell.innerHTML = formName;
-    ageCell.innerHTML = formAge;
-    genderCell.innerHTML = formGender;
-
-    //criando o botão de editar campos
-
-    var editButton = document.createElement('BUTTON');
-    var editIcon = document.createElement('i');
-
-    editIcon.setAttribute("class","bi bi-pencil");
     
-    editButton.setAttribute("class","btn btn-primary");
-    editButton.setAttribute("onclick","transferValueToModal(this)");
-    editButton.setAttribute("data-bs-toggle","modal");
-    editButton.setAttribute("data-bs-target","#staticBackdrop");
-    editButton.innerHTML = editIcon.outerHTML;
-
-    iconsCell.innerHTML = editButton.outerHTML;
-
-    //criando o botão de remover o cadastro
-
-    var deleteButton = document.createElement('BUTTON');
-    var deleteIcon = document.createElement('i');
-
-    deleteIcon.setAttribute("class","bi bi-trash");
-    
-    deleteButton.setAttribute("class","btn btn-danger");
-    deleteButton.setAttribute("onclick","deleteRow(this)");
-    deleteButton.innerHTML = deleteIcon.outerHTML;
-
-    iconsCell.innerHTML += deleteButton.outerHTML;
-
-    var formNameEle = document.getElementById('createNameField');
-    var formAgeEle = document.getElementById('createIdadeField');
-    formNameEle.value = "";
-    formAgeEle.value = "";
-
-    var formsField = document.getElementById('FormsField');
-    formsField.classList.remove("FormsFieldContainer_show");
-    formsField.classList.add("FormsFieldContainer_hidden");
-}
+    }
 
 function transferValueToModal(btn){
     //removendo todas as TR em edição, caso haja
@@ -171,18 +127,45 @@ function alterarCadastro(){
     var newFormAge = document.getElementById('editIdadeField').value;
     var newformGender = document.getElementById('editGenderField').value;
     var editingRow = document.getElementsByClassName('editing');
-    var editingCells = editingRow[0].cells;
-
-    editingCells[0].innerHTML = newFormName;
-    editingCells[1].innerHTML = newFormAge;
-    editingCells[2].innerHTML = newformGender;
+    var selectedID = editingRow[0].querySelector('input').value;
 
     editingRow[0].classList.remove('editing');
+
+    $.ajax({
+        method: "POST",
+        url: "https://studiopowerstrong.000webhostapp.com/Dados.php",
+        dataType: 'json',
+        data: { acao: "editar", dbname: "UsuarioLeonardo", Id: selectedID, Nome: newFormName, Idade: newFormAge, Sexo: newformGender }
+    })
+    .done(function(result){
+        clearGrid();
+        importData();
+    })
+    .fail(function(jqXHR, textStatus, msg){
+        console.log(jqXHR);
+        console.log(textStatus);
+        alert(msg);
+    });
 }
 
-function deleteRow(btn){
+function deleteCadastro(btn){
     if(confirm("Tem certeza que deseja deletar este cadastro?") == true){
         var currentRow = btn.closest("tr");
-        currentRow;
+        var selectedID = currentRow.querySelector('input').value;
+        $.ajax({
+            method: "POST",
+            url: "https://studiopowerstrong.000webhostapp.com/Dados.php",
+            dataType: 'json',
+            data: { acao: "deletar", dbname: "UsuarioLeonardo", Id: selectedID}
+        })
+        .done(function(result){
+            clearGrid();
+            importData();
+        })
+        .fail(function(jqXHR, textStatus, msg){
+            console.log(jqXHR);
+            console.log(textStatus);
+            alert(msg);
+        });
     }
 }

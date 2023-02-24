@@ -11,8 +11,7 @@
     <title>Cadastro no Banco de Dados</title>
 </head>
 <body>
-    <div class="header_container">
-        
+    <div class="header_container"> 
         <input type="button" value="Novo" class="btn btn-primary" onclick="abrirCamposCadastro()">
         <div class="FormsFieldContainer_hidden" id="FormsField">
             <form action="https://studiopowerstrong.000webhostapp.com/Dados.php" method="post">
@@ -25,7 +24,7 @@
                 </select>
                 <input type="hidden" name="acao" value="cadastrar">
                 <input type="hidden" name="dbname" value="UsuarioLeonardo">
-                <input type="submit" value="Cadastrar" class="btn btn-success">
+                <input type="submit" value="Cadastrar" class="btn btn-success" onclick="">
             </form>
         </div>
     </div>
@@ -67,7 +66,7 @@
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="FormsTableBody">
                 
             </tbody>
         </table>
