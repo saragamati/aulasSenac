@@ -1,0 +1,30 @@
+.cadastro_main{
+    display: flex;
+    justify-content: space-around;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+}
+.cadastro_main_container{
+    width: 30%;
+}
+.cadastro_main_container__header{
+    display: flex;
+    justify-content: space-around;
+}
+.cadastro_main_container__button{
+    display: flex;
+    justify-content: space-around;
+}
+.form_input_age{
+    width: 22%;
+}
+.table_header{
+    display: flex;
+    justify-content: space-around;
+}
+.table_main{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+}
