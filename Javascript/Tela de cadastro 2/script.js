@@ -36,6 +36,15 @@ function fillGrid(cadastros){
         
         nameCell.innerHTML = eleName;
         ageCell.innerHTML = eleAge;
+        
+        if(eleGender == 1){
+            eleGender = "Masculino";
+        }else if(eleGender == 2){
+            eleGender = "Feminino";
+        }else{
+            eleGender = "Prefiro não responder";
+        }
+
         genderCell.innerHTML = eleGender;
 
         //EDIT
@@ -48,6 +57,7 @@ function fillGrid(cadastros){
         editButton.setAttribute('class','btn btn-primary');
         editButton.setAttribute('data-bs-toggle','modal');
         editButton.setAttribute('data-bs-target','#staticBackdrop');
+        editButton.setAttribute('onclick','valueTransfer(this)');
 
         editButton.innerHTML = editIcon.outerHTML;
 
@@ -76,7 +86,24 @@ function fillGrid(cadastros){
         row.appendChild(hiddenInput);
     });
 }
-function incluir(ele){
+function modalSetToCreate(){
+    var modalTitle = document.getElementById('staticBackdropLabel');
+    modalTitle.innerHTML = "Criar novo cadastro";
+
+    var nameField = document.getElementById('formNome');
+    var ageField = document.getElementById('formIdade');
+    var genderField = document.getElementById('formGenero');
+
+    nameField.value = "";
+    ageField.value = "";
+    genderField.value = "";
+
+    var saveButton = document.getElementById('modalSaveButton');
+    var saveButtonOnclick = saveButton.getAttributeNode("onclick");
+    saveButton.removeAttributeNode(saveButtonOnclick);
+    saveButton.setAttribute('onclick','incluir()');
+}
+function incluir(){
     var formName = document.getElementById('formNome').value;
     var formGender = document.getElementById('formGenero').value;
     var formAge = document.getElementById('formIdade').value;
@@ -84,10 +111,9 @@ function incluir(ele){
     $.ajax({
         method: "POST",
         url: "https://studiopowerstrong.000webhostapp.com/Dados.php",
-        dataType: 'json',
         data: { acao: "cadastrar", dbname: "UsuarioLeonardo" , Nome: formName , Idade: formAge , Sexo: formGender}
     })
-    .done(function(){
+    .done(function(e){
         clearGrid();
         importData();
     })
@@ -98,14 +124,85 @@ function incluir(ele){
     });
 }
 function apagar(ele){
-    var selectedRow = ele.closest('tr');
-    var hiddenInput = selectedRow.querySelector('input');
+    if(confirm('Tem certeza que deseja deletar?') == true){
+        var selectedRow = ele.closest('tr');
+        var hiddenInput = selectedRow.querySelector('input');
+    
+        $.ajax({
+            method: "POST",
+            url: "https://studiopowerstrong.000webhostapp.com/Dados.php",
+            dataType: 'json',
+            data: { acao: "deletar", dbname: "UsuarioLeonardo" , Id: hiddenInput.value}
+        })
+        .done(function(){
+            clearGrid();
+            importData();
+        })
+        .fail(function(jqXHR, textStatus, msg){
+            console.log(jqXHR);
+            console.log(textStatus);
+            alert(msg);
+        });
+    }
+    
+}
+function valueTransfer(e){
+    // limpar todas classes editing
+    var editingRows = document.querySelectorAll("tr.editing");
+
+    if(editingRows.length > 0){
+        editingRows.forEach(element => {
+            element.classList.remove('editing');
+        });
+    }
+    
+    //adicionar editing à tr selecionada
+
+    var currentRow = e.closest('tr');
+    currentRow.classList.add('editing');
+
+    var TDarray = currentRow.cells;
+    var currentName = TDarray[0].innerHTML;
+    var currentAge = TDarray[1].innerHTML;
+    var currentGender = TDarray[2].innerHTML;
+
+    if(currentGender == "Masculino"){
+        genderID = 1;
+    }else if(currentGender == "Feminino"){
+        genderID = 2;
+    }else{
+        genderID = 3;
+    }
+
+    var nameEditField = document.getElementById('formNome');
+    var ageEditField = document.getElementById('formIdade');
+    var genderEditField = document.getElementById('formGenero');
+
+    nameEditField.value = currentName;
+    ageEditField.value = currentAge;
+    genderEditField.value = genderID;
+
+    var saveButton = document.getElementById('modalSaveButton');
+    var saveButtonOnclick = saveButton.getAttributeNode("onclick");
+    saveButton.removeAttributeNode(saveButtonOnclick);
+    saveButton.setAttribute('onclick','salvarAlteracoes()');
+
+    var modalTitle = document.getElementById('staticBackdropLabel');
+    modalTitle.innerHTML = "Edição de cadastro";
+}
+function salvarAlteracoes(){
+    var editingTR = document.getElementsByClassName('editing');
+
+    var editID = editingTR[0].querySelector('input').value;
+    var nameEditField = document.getElementById('formNome').value;
+    var ageEditField = document.getElementById('formIdade').value;
+    var genderEditField = document.getElementById('formGenero').value;
 
     $.ajax({
         method: "POST",
         url: "https://studiopowerstrong.000webhostapp.com/Dados.php",
         dataType: 'json',
-        data: { acao: "deletar", dbname: "UsuarioLeonardo" , Id: hiddenInput.value}
+        data: { acao: "editar", dbname: "UsuarioLeonardo", Id: editID, Nome: nameEditField, Idade: ageEditField, Sexo: genderEditField }
     })
     .done(function(){
         clearGrid();
@@ -116,4 +213,5 @@ function apagar(ele){
         console.log(textStatus);
         alert(msg);
     });
+    
 }
