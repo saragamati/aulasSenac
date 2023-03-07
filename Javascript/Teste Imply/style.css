@@ -1,0 +1,81 @@
+:root {
+    --color-azul: #07a5b1;
+    --color-cinza: #707070;
+}
+
+body {
+    background-color: #5d6070;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.input45px {
+    height: 45px;
+}
+
+.fonte-cinza {
+    color: var(--color-cinza);
+}
+
+.container-header {
+    padding: 1.8rem;
+    padding-bottom: 0px;
+}
+
+.header-text {
+    color: var(--color-azul);
+}
+
+.main-container {
+    background-color: white;
+    width: 440px;
+    margin-top: 2.4rem;
+    border-radius: .5rem;
+}
+
+.form-container {
+    padding: 1.8rem;
+}
+
+.necessary-star {
+    color: var(--color-azul);
+}
+
+.form-button {
+    background-color: var(--color-azul);
+    border-color: var(--color-azul);
+    opacity: .9;
+}
+
+.form-button:hover {
+    background-color: var(--color-azul);
+    border-color: var(--color-azul);
+    opacity: 1;
+}
+
+.form-button:active ,  .form-button:focus{
+    background-color: var(--color-azul) !important;
+    border-color: var(--color-azul) !important;
+    opacity: .9;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+}
+
+.foot-container {
+    width: 440px;
+    margin-top: 1.8rem;
+}
+
+.footer-text {
+    color: white;
+}
+
+.font-bold {
+    font-weight: bold;
+}
