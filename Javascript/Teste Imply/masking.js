@@ -49,8 +49,6 @@ function lettersOnly(key) {
     }
 }
 
-function numbersOnly(key) {
-    if(!(key.keyCode >= 96 && key.keyCode <= 105) && !(key.keyCode >= 48 && key.keyCode <= 57) && !(key.keyCode == 8) && !(key.keyCode == 9)){
-        key.preventDefault();
-    }
+function numbersOnly(input) {
+    input.value = input.value.replace(/\D/g,"");
 }

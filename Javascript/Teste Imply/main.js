@@ -34,6 +34,13 @@ function cep_form_clean() {
     $("#logradouroInput")[0].value = ""; 
 }
 
+function startVerification() {
+    nameVerification();
+    emailVerification();
+    phoneVerification();
+    cpfVerification();
+}
+
 function cpfValidate(){
     var cpfField = document.getElementById("cpfbox").value;
     var CPFfirstNine = cpfField.split('-')[0].replaceAll(".","");
