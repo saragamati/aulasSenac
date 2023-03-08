@@ -1,25 +1,37 @@
-function CEPAutofill() {
-    var removeTraco = $('#cepInput')[0].value.split('-');
-    var cepRequest = `${removeTraco[0]}${removeTraco[1]}`;
+function CEPsearch(valor) {
+    var cep = valor.replace(/\D/g, ''); // Substitui tudo que não for dígito
 
-    var url = 'https://viacep.com.br/ws/'+cepRequest+'/json/';
-            $.ajax({
-                    url: url,
-                    dataType: 'jsonp',
-                    crossDomain: true,
-                    contentType: "application/json",
-                    success : function(json){
-                        if(json.logradouro){
-                            $("#logradouroInput").val(json.logradouro);
-                            $("#bairroInput").val(json.bairro);
-                            $("#cidadeInput").val(json.localidade);
-                        }else{
-                            $("#logradouroInput").val("");
-                            $("#bairroInput").val("");
-                            $("#cidadeInput").val("");
-                        }
-                    }
-            });
+    if(cep != "") {
+        var cepvalidate = /^[0-9]{8}$/;
+
+        if(cepvalidate.test(cep)) {
+
+            var cepScript = document.createElement('script');
+            cepScript.src = `https://viacep.com.br/ws/${cep}/json/?callback=CEP_callback`;
+            document.body.appendChild(cepScript);
+            
+        }else{
+            alert("Formato de CEP inválido.");
+            cep_form_clean();
+        }
+    }
+}
+
+function CEP_callback(content){
+    if(!content.erro) {
+        $("#cidadeInput")[0].value = content.localidade;
+        $("#bairroInput")[0].value = content.bairro;
+        $("#logradouroInput")[0].value = content.logradouro; 
+    }else{
+        alert("CEP não encontrado");
+        cep_form_clean();
+    }
+}
+
+function cep_form_clean() {
+    $("#cidadeInput")[0].value = "";
+    $("#bairroInput")[0].value = "";
+    $("#logradouroInput")[0].value = ""; 
 }
 
 function cpfValidate(){

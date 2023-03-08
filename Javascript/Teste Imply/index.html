@@ -18,26 +18,26 @@
                 <p class="fonte-cinza">Utilize esse cadastro para fazer parte do maior site de trade de Bitcoin do mundo.</p>
             </div>
             <div class="form-container">
-                <form class="row g-3">
+                <form class="row g-3" method="POST">
                     <div class="col-12">
                         <label for="nomeCompletoInput" class="form-label fonte-cinza">Nome completo <span class="necessary-star">*</span></label>
-                        <input type="text" class="form-control input45px" id="nomeCompletoInput">
+                        <input type="text" class="form-control input45px" id="nomeCompletoInput" required>
                     </div>
                     <div class="col-12">
                         <label for="mailInput" class="form-label fonte-cinza">Email <span class="necessary-star">*</span></label>
-                        <input type="email" class="form-control input45px" id="mailInput">
+                        <input type="email" class="form-control input45px" id="mailInput" required>
                     </div>
                     <div class="col-md-6">
                         <label for="telefoneInput" class="form-label fonte-cinza fonte-cinza">Telefone <span class="necessary-star">*</span></label>
-                        <input type="tel" class="form-control input45px" id="telefoneInput" maxlength="15" onkeyup="handlePhone(event)">
+                        <input type="tel" class="form-control input45px" id="telefoneInput" maxlength="15" onkeyup="handlePhone(event)" required>
                     </div>
                     <div class="col-md-6">
                         <label for="cpfInput" class="form-label fonte-cinza">CPF <span class="necessary-star">*</span></label>
-                        <input type="text" class="form-control input45px" id="cpfInput" onkeyup="handleCPF(event)" maxlength="14">
+                        <input type="text" class="form-control input45px" id="cpfInput" onkeyup="handleCPF(event)" maxlength="14" required>
                     </div>
                     <div class="col-md-6">
                         <label for="cepInput" class="form-label fonte-cinza">CEP <span class="necessary-star">*</span></label>
-                        <input type="text" class="form-control input45px" id="cepInput" onkeyup="handleCEP(event)" onblur="CEPAutofill()" maxlength="9">
+                        <input type="text" class="form-control input45px" id="cepInput" value="" onkeyup="handleCEP(event)" onblur="CEPsearch(this.value)" maxlength="9">
                     </div>
                     <div class="col-md-6">
                         <label for="cidadeInput" class="form-label fonte-cinza">Cidade</label>
@@ -61,19 +61,19 @@
         </div>
         <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
                 </div>
-                <div class="modal-body">
-                  ...
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
             </div>
           </div>
     </main>

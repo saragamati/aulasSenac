@@ -54,4 +54,3 @@ function numbersOnly(key) {
         key.preventDefault();
     }
 }
-
