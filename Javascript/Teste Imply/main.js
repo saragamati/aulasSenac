@@ -11,24 +11,28 @@ function CEPsearch(valor) {
             document.body.appendChild(cepScript);
             
         }else{
-            alert("Formato de CEP inválido.");
+            // alertAppend('Formato do CEP inválido');
             cep_form_clean();
         }
+    }else{
+        // alertAppend('Formato do CEP inválido');
+        cep_form_clean();
     }
 }
 
-function CEP_callback(content){
+function CEP_callback(content) {
     if(!content.erro) {
         $("#cidadeInput")[0].value = content.localidade;
         $("#bairroInput")[0].value = content.bairro;
         $("#logradouroInput")[0].value = content.logradouro; 
-    }else{
-        alert("CEP não encontrado");
+    }else{  
+        // alertAppend('CEP não encontrado');
         cep_form_clean();
     }
 }
 
 function cep_form_clean() {
+    $("#cepInput")[0].value = "";
     $("#cidadeInput")[0].value = "";
     $("#bairroInput")[0].value = "";
     $("#logradouroInput")[0].value = ""; 
@@ -41,58 +45,89 @@ function startVerification() {
     cpfVerification();
 }
 
-function cpfValidate(){
-    var cpfField = document.getElementById("cpfbox").value;
-    var CPFfirstNine = cpfField.split('-')[0].replaceAll(".","");
-    var CPFdigits = cpfField.split('-')[1];
+function nameVerification() {
+    var inputName = $('#nomeCompletoInput').val();
 
-    var firstNineArray = CPFfirstNine.split('');
-    var digitsArray = CPFdigits[1].split('');
+    if(!/^[A-z ]+$/.test(inputName)) {
+        alertAppend('Nome inválido');
+    }
+}
+
+function emailVerification() {
+    var inputEmail = $('#mailInput').val();
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    if(!validRegex.test(inputEmail)) {
+        alertAppend('E-mail inválido');
+    }
+}
+
+function phoneVerification() {
+    var inputPhone = $('#telefoneInput').val().replace(/\D/g,'');
+
+    if(!(inputPhone.length == 11) && !(inputPhone.length == 10)) {
+        alertAppend('Telefone inválido');
+    }
+}
+
+function cpfVerification() {
+    var inputCPF = $('#cpfInput').val().replace(/\D/g,'');
+
+    if(inputCPF.length == 11){
+        if(!cpfsearch(inputCPF)){
+            alertAppend('CPF inválido');
+        }
+    }else{
+        alertAppend('CPF inválido');
+    }
+}
+
+function cpfsearch(CPF){
+    var cpfNine = CPF.slice(0, 9);
+    var digitoUm = cpfcalc(cpfNine);
+    var cpfTen = `${cpfNine}${digitoUm}`;
+    var digitoDois = cpfcalc(cpfTen);
+    var verificador = `${cpfTen}${digitoDois}`;
+
+    if(verificador == CPF){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function cpfcalc(num) {
+    var multiplicador = (num.length+1)
+    var numbersArray = num.split('');
+    var result = 0;
     
+    numbersArray.forEach(number => {
+        mult = number*multiplicador;
+        result += mult;
+        multiplicador--;
+    });
 
-    var firstCalc = 0;
-    var mult = 2;
-
-    for(var n=8;n<=0;n--){
-        var calcResult = ((Number(firstNineArray[n]))*mult);
-
-        firstCalc += calcResult;
-
-        mult++;
-    }
-
-    var FirstVerificationDigit = 0;
-
-    if(firstCalc%11 < 2){
-        FirstVerificationDigit = 0;
+    if((result%11)<2){
+        var digit = 0;
+        return digit;
     }else{
-        FirstVerificationDigit = (11 - (firstCalc%11));
+        var digit = 11-(result%11);
+        return digit;
     }
+}
 
-    var SecondCalc = (2*FirstVerificationDigit);
-    var multTwo = 3;
+function alertAppend(erro) {
+    var modalBodyDiv = $('.modal-body');
 
-    for(var k=8;k<=0;k--){
-        var calcResulTwo = ((Number(firstNineArray[n]))*multTwo);
+    var alert = document.createElement('div');
+    alert.setAttribute('class' , 'alert alert-danger');
+    alert.setAttribute('role' , 'alert');
+    alert.innerHTML = `${erro}`;
 
-        SecondCalc += calcResulTwo;
+    modalBodyDiv.append(alert)
+}
 
-        multTwo++;
-    }
-
-    var SecondVerificationDigit = 0;
-
-    if(SecondCalc%11 < 2){
-        SecondVerificationDigit = 0;
-    }else{
-        SecondVerificationDigit = (11 - (SecondCalc%11));
-    }
-
-    if(((Number(digitsArray[0]))!=FirstVerificationDigit) || ((Number(digitsArray[1]))!=SecondVerificationDigit)){
-        console.log('CPF Inválido');
-    }else{
-        console.log('CPF Válido');
-    }
-
-    console.log(`${FirstVerificationDigit}, ${SecondVerificationDigit}, ${digitsArray[0]}, ${digitsArray[1]}`)
+function clearModalBody() {
+    var modalBodyDivs = $('.modal-body div');
+    modalBodyDivs.remove();
 }
